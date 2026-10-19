@@ -1,4 +1,4 @@
-# TinyEdge-AI
+# TinyEdge
 
 Research project studying the trade-off between predictive accuracy and
 inference efficiency when compressing CNNs for edge deployment.
