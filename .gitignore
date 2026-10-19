@@ -1,0 +1,18 @@
+# Local datasets and downloaded archives
+data/cifar-10-batches-py/
+data/cifar-10-python.tar.gz
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local experiment outputs; keep curated results under results/
+results/experiments/*
+!results/experiments/custom_cnn_progressive_20261019T120338521794Z/
+!results/experiments/custom_cnn_progressive_20261019T120338521794Z/**
+
+# Local OS/editor files
+.DS_Store
+.vscode/
+.idea/

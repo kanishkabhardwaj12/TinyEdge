@@ -1,0 +1,14 @@
+{
+  "method": "static_post_training_int8",
+  "status": "failed",
+  "device": "cpu",
+  "supported_engines": [
+    "qnnpack",
+    "none"
+  ],
+  "default_engine": "none",
+  "source_checkpoint": "results/experiments/custom_cnn_progressive_20261019T120338521794Z/artifacts/stage_0_baseline_best_state.pth",
+  "failure_type": "AssertionError",
+  "failure_reason": "backend: none not supported. backend must be one of ['fbgemm', 'x86', 'qnnpack', 'onednn']",
+  "traceback": "Traceback (most recent call last):\n  File \"<stdin>\", line 18, in <module>\n  File \"/Users/kanishkabhardwaj/Library/Python/3.9/lib/python/site-packages/torch/ao/quantization/qconfig.py\", line 270, in get_default_qconfig\n    raise AssertionError(\nAssertionError: backend: none not supported. backend must be one of ['fbgemm', 'x86', 'qnnpack', 'onednn']\n"
+}

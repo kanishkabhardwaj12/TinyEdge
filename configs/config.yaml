@@ -1,0 +1,39 @@
+dataset:
+  name: "CIFAR-10"
+  batch_size: 64
+  num_workers: 2
+  subset_fraction: 1.0
+
+training:
+  epochs: 30
+  learning_rate: 0.01
+  weight_decay: 5e-4
+  seed: 42
+  fine_tune_epochs: 5
+
+models:
+  baseline: "resnet18"
+  lightweight: "mobilenetv2"
+  comparison:
+    - "resnet18"
+    - "custom_cnn"
+    - "custom_cnn_w075"
+    - "custom_cnn_w050"
+    - "custom_cnn_w025"
+
+evaluation:
+  metrics: ["accuracy", "precision", "recall", "f1", "confusion_matrix"]
+  device: "mps"
+  latency_warmup: 10
+  latency_iterations: 100
+
+experiment:
+  seed: 42
+  output_root: "results/experiments"
+
+runtime:
+  cpu_threads: 8
+
+paths:
+  artifacts_dir: "artifacts/"
+  results_dir: "results/"

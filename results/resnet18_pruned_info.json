@@ -1,0 +1,7 @@
+{
+    "model_name": "resnet18_pruned",
+    "train_time": 0,
+    "best_val_acc": 0.227,
+    "model_size_mb": 42.71326732635498,
+    "params": 11173962
+}

@@ -1,0 +1,1755 @@
+
+pytorch
+2.14.1+cpu:¶÷
+È
+input
+model.conv1.weight
+model.conv1.weight_biasgetitemnode_Conv_291"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†JÏ
+	namespaceﬁ: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.bn1: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ‘
+pkg.torch.onnx.class_hierarchy±['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J¨
+pkg.torch.onnx.fx_nodeë%_native_batch_norm_legit_no_training : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d, %p_model_bn1_weight, %p_model_bn1_bias, %b_model_bn1_running_mean, %b_model_bn1_running_var, 0.1, 1e-05), kwargs = {})J`
+pkg.torch.onnx.name_scopesB['', 'model', 'model.bn1', '_native_batch_norm_legit_no_training']J
+pkg.torch.onnx.stack_trace—File "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+œ
+getitemrelu	node_relu"ReluJß
+	namespaceô: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.relu: torch.nn.modules.activation.ReLU/relu: aten.relu.defaultJÆ
+pkg.torch.onnx.class_hierarchyã['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']JÑ
+pkg.torch.onnx.fx_nodej%relu : [num_users=2] = call_function[target=torch.ops.aten.relu.default](args = (%getitem,), kwargs = {})JA
+pkg.torch.onnx.name_scopes#['', 'model', 'model.relu', 'relu']Já
+pkg.torch.onnx.stack_traceËFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+Õ
+relu
+model.layer1.0.conv1.weight
+ model.layer1.0.conv1.weight_bias	getitem_3node_Conv_293"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J‡
+	namespace“: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer1: torch.nn.modules.container.Sequential/model.layer1.0: torchvision.models.resnet.BasicBlock/model.layer1.0.bn1: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_1: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J‘
+pkg.torch.onnx.fx_nodeπ%_native_batch_norm_legit_no_training_1 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_1, %p_model_layer1_0_bn1_weight, %p_model_layer1_0_bn1_bias, %b_model_layer1_0_bn1_running_mean, %b_model_layer1_0_bn1_running_var, 0.1, 1e-05), kwargs = {})Jç
+pkg.torch.onnx.name_scopeso['', 'model', 'model.layer1', 'model.layer1.0', 'model.layer1.0.bn1', '_native_batch_norm_legit_no_training_1']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 93, in forward
+    out = self.bn1(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+Ç
+	getitem_3relu_1node_relu_1"ReluJõ
+	namespaceç: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer1: torch.nn.modules.container.Sequential/model.layer1.0: torchvision.models.resnet.BasicBlock/model.layer1.0.relu: torch.nn.modules.activation.ReLU/relu_1: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Jà
+pkg.torch.onnx.fx_noden%relu_1 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%getitem_3,), kwargs = {})Jn
+pkg.torch.onnx.name_scopesP['', 'model', 'model.layer1', 'model.layer1.0', 'model.layer1.0.relu', 'relu_1']Jæ
+pkg.torch.onnx.stack_traceüFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 94, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+œ
+relu_1
+model.layer1.0.conv2.weight
+ model.layer1.0.conv2.weight_bias	getitem_6node_Conv_295"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J‡
+	namespace“: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer1: torch.nn.modules.container.Sequential/model.layer1.0: torchvision.models.resnet.BasicBlock/model.layer1.0.bn2: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_2: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J‘
+pkg.torch.onnx.fx_nodeπ%_native_batch_norm_legit_no_training_2 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_2, %p_model_layer1_0_bn2_weight, %p_model_layer1_0_bn2_bias, %b_model_layer1_0_bn2_running_mean, %b_model_layer1_0_bn2_running_var, 0.1, 1e-05), kwargs = {})Jç
+pkg.torch.onnx.name_scopeso['', 'model', 'model.layer1', 'model.layer1.0', 'model.layer1.0.bn2', '_native_batch_norm_legit_no_training_2']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 97, in forward
+    out = self.bn2(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+–
+
+	getitem_6
+reluaddnode_add"AddJ‡
+	namespace“: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer1: torch.nn.modules.container.Sequential/model.layer1.0: torchvision.models.resnet.BasicBlock/add: aten.add.TensorJŸ
+pkg.torch.onnx.class_hierarchy∂['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'aten.add.Tensor']Jâ
+pkg.torch.onnx.fx_nodeo%add : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%getitem_6, %relu), kwargs = {})JT
+pkg.torch.onnx.name_scopes6['', 'model', 'model.layer1', 'model.layer1.0', 'add']Já
+pkg.torch.onnx.stack_traceËFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 102, in forward
+    out += identity
+˜
+addrelu_2node_relu_2"ReluJõ
+	namespaceç: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer1: torch.nn.modules.container.Sequential/model.layer1.0: torchvision.models.resnet.BasicBlock/model.layer1.0.relu: torch.nn.modules.activation.ReLU/relu_2: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']JÇ
+pkg.torch.onnx.fx_nodeh%relu_2 : [num_users=2] = call_function[target=torch.ops.aten.relu.default](args = (%add,), kwargs = {})Jn
+pkg.torch.onnx.name_scopesP['', 'model', 'model.layer1', 'model.layer1.0', 'model.layer1.0.relu', 'relu_2']Jø
+pkg.torch.onnx.stack_trace†File "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 103, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+œ
+relu_2
+model.layer1.1.conv1.weight
+ model.layer1.1.conv1.weight_bias	getitem_9node_Conv_297"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J‡
+	namespace“: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer1: torch.nn.modules.container.Sequential/model.layer1.1: torchvision.models.resnet.BasicBlock/model.layer1.1.bn1: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_3: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J‘
+pkg.torch.onnx.fx_nodeπ%_native_batch_norm_legit_no_training_3 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_3, %p_model_layer1_1_bn1_weight, %p_model_layer1_1_bn1_bias, %b_model_layer1_1_bn1_running_mean, %b_model_layer1_1_bn1_running_var, 0.1, 1e-05), kwargs = {})Jç
+pkg.torch.onnx.name_scopeso['', 'model', 'model.layer1', 'model.layer1.1', 'model.layer1.1.bn1', '_native_batch_norm_legit_no_training_3']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 93, in forward
+    out = self.bn1(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+Ç
+	getitem_9relu_3node_relu_3"ReluJõ
+	namespaceç: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer1: torch.nn.modules.container.Sequential/model.layer1.1: torchvision.models.resnet.BasicBlock/model.layer1.1.relu: torch.nn.modules.activation.ReLU/relu_3: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Jà
+pkg.torch.onnx.fx_noden%relu_3 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%getitem_9,), kwargs = {})Jn
+pkg.torch.onnx.name_scopesP['', 'model', 'model.layer1', 'model.layer1.1', 'model.layer1.1.relu', 'relu_3']Jæ
+pkg.torch.onnx.stack_traceüFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 94, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+–
+relu_3
+model.layer1.1.conv2.weight
+ model.layer1.1.conv2.weight_bias
+getitem_12node_Conv_299"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J‡
+	namespace“: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer1: torch.nn.modules.container.Sequential/model.layer1.1: torchvision.models.resnet.BasicBlock/model.layer1.1.bn2: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_4: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J‘
+pkg.torch.onnx.fx_nodeπ%_native_batch_norm_legit_no_training_4 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_4, %p_model_layer1_1_bn2_weight, %p_model_layer1_1_bn2_bias, %b_model_layer1_1_bn2_running_mean, %b_model_layer1_1_bn2_running_var, 0.1, 1e-05), kwargs = {})Jç
+pkg.torch.onnx.name_scopeso['', 'model', 'model.layer1', 'model.layer1.1', 'model.layer1.1.bn2', '_native_batch_norm_legit_no_training_4']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 97, in forward
+    out = self.bn2(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+‡
+
+
+getitem_12
+relu_2add_1
+node_add_1"AddJ‚
+	namespace‘: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer1: torch.nn.modules.container.Sequential/model.layer1.1: torchvision.models.resnet.BasicBlock/add_1: aten.add.TensorJŸ
+pkg.torch.onnx.class_hierarchy∂['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'aten.add.Tensor']Jé
+pkg.torch.onnx.fx_nodet%add_1 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%getitem_12, %relu_2), kwargs = {})JV
+pkg.torch.onnx.name_scopes8['', 'model', 'model.layer1', 'model.layer1.1', 'add_1']Já
+pkg.torch.onnx.stack_traceËFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 102, in forward
+    out += identity
+˚
+add_1relu_4node_relu_4"ReluJõ
+	namespaceç: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer1: torch.nn.modules.container.Sequential/model.layer1.1: torchvision.models.resnet.BasicBlock/model.layer1.1.relu: torch.nn.modules.activation.ReLU/relu_4: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']JÑ
+pkg.torch.onnx.fx_nodej%relu_4 : [num_users=2] = call_function[target=torch.ops.aten.relu.default](args = (%add_1,), kwargs = {})Jn
+pkg.torch.onnx.name_scopesP['', 'model', 'model.layer1', 'model.layer1.1', 'model.layer1.1.relu', 'relu_4']Jø
+pkg.torch.onnx.stack_trace†File "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 103, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+–
+relu_4
+model.layer2.0.conv1.weight
+ model.layer2.0.conv1.weight_bias
+getitem_15node_Conv_301"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J‡
+	namespace“: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer2: torch.nn.modules.container.Sequential/model.layer2.0: torchvision.models.resnet.BasicBlock/model.layer2.0.bn1: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_5: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J‘
+pkg.torch.onnx.fx_nodeπ%_native_batch_norm_legit_no_training_5 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_5, %p_model_layer2_0_bn1_weight, %p_model_layer2_0_bn1_bias, %b_model_layer2_0_bn1_running_mean, %b_model_layer2_0_bn1_running_var, 0.1, 1e-05), kwargs = {})Jç
+pkg.torch.onnx.name_scopeso['', 'model', 'model.layer2', 'model.layer2.0', 'model.layer2.0.bn1', '_native_batch_norm_legit_no_training_5']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 93, in forward
+    out = self.bn1(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+Ñ
+
+getitem_15relu_5node_relu_5"ReluJõ
+	namespaceç: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer2: torch.nn.modules.container.Sequential/model.layer2.0: torchvision.models.resnet.BasicBlock/model.layer2.0.relu: torch.nn.modules.activation.ReLU/relu_5: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Jâ
+pkg.torch.onnx.fx_nodeo%relu_5 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%getitem_15,), kwargs = {})Jn
+pkg.torch.onnx.name_scopesP['', 'model', 'model.layer2', 'model.layer2.0', 'model.layer2.0.relu', 'relu_5']Jæ
+pkg.torch.onnx.stack_traceüFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 94, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+–
+relu_5
+model.layer2.0.conv2.weight
+ model.layer2.0.conv2.weight_bias
+getitem_18node_Conv_303"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J‡
+	namespace“: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer2: torch.nn.modules.container.Sequential/model.layer2.0: torchvision.models.resnet.BasicBlock/model.layer2.0.bn2: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_6: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J‘
+pkg.torch.onnx.fx_nodeπ%_native_batch_norm_legit_no_training_6 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_6, %p_model_layer2_0_bn2_weight, %p_model_layer2_0_bn2_bias, %b_model_layer2_0_bn2_running_mean, %b_model_layer2_0_bn2_running_var, 0.1, 1e-05), kwargs = {})Jç
+pkg.torch.onnx.name_scopeso['', 'model', 'model.layer2', 'model.layer2.0', 'model.layer2.0.bn2', '_native_batch_norm_legit_no_training_6']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 97, in forward
+    out = self.bn2(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+ƒ
+relu_4
+"model.layer2.0.downsample.0.weight
+'model.layer2.0.downsample.0.weight_bias
+getitem_21node_Conv_305"Conv*
+group†*
+pads@ @ @ @ †*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J™
+	namespaceú: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer2: torch.nn.modules.container.Sequential/model.layer2.0: torchvision.models.resnet.BasicBlock/model.layer2.0.downsample: torch.nn.modules.container.Sequential/model.layer2.0.downsample.1: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_7: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJŒ
+pkg.torch.onnx.class_hierarchy´['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J¯
+pkg.torch.onnx.fx_node›%_native_batch_norm_legit_no_training_7 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_7, %p_model_layer2_0_downsample_1_weight, %p_model_layer2_0_downsample_1_bias, %b_model_layer2_0_downsample_1_running_mean, %b_model_layer2_0_downsample_1_running_var, 0.1, 1e-05), kwargs = {})J¥
+pkg.torch.onnx.name_scopesï['', 'model', 'model.layer2', 'model.layer2.0', 'model.layer2.0.downsample', 'model.layer2.0.downsample.1', '_native_batch_norm_legit_no_training_7']JŒ
+pkg.torch.onnx.stack_traceØFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 100, in forward
+    identity = self.downsample(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+Ë
+
+
+getitem_18
+
+getitem_21add_2
+node_add_2"AddJ‚
+	namespace‘: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer2: torch.nn.modules.container.Sequential/model.layer2.0: torchvision.models.resnet.BasicBlock/add_2: aten.add.TensorJŸ
+pkg.torch.onnx.class_hierarchy∂['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'aten.add.Tensor']Jí
+pkg.torch.onnx.fx_nodex%add_2 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%getitem_18, %getitem_21), kwargs = {})JV
+pkg.torch.onnx.name_scopes8['', 'model', 'model.layer2', 'model.layer2.0', 'add_2']Já
+pkg.torch.onnx.stack_traceËFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 102, in forward
+    out += identity
+˚
+add_2relu_6node_relu_6"ReluJõ
+	namespaceç: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer2: torch.nn.modules.container.Sequential/model.layer2.0: torchvision.models.resnet.BasicBlock/model.layer2.0.relu: torch.nn.modules.activation.ReLU/relu_6: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']JÑ
+pkg.torch.onnx.fx_nodej%relu_6 : [num_users=2] = call_function[target=torch.ops.aten.relu.default](args = (%add_2,), kwargs = {})Jn
+pkg.torch.onnx.name_scopesP['', 'model', 'model.layer2', 'model.layer2.0', 'model.layer2.0.relu', 'relu_6']Jø
+pkg.torch.onnx.stack_trace†File "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 103, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+–
+relu_6
+model.layer2.1.conv1.weight
+ model.layer2.1.conv1.weight_bias
+getitem_24node_Conv_307"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J‡
+	namespace“: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer2: torch.nn.modules.container.Sequential/model.layer2.1: torchvision.models.resnet.BasicBlock/model.layer2.1.bn1: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_8: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J‘
+pkg.torch.onnx.fx_nodeπ%_native_batch_norm_legit_no_training_8 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_8, %p_model_layer2_1_bn1_weight, %p_model_layer2_1_bn1_bias, %b_model_layer2_1_bn1_running_mean, %b_model_layer2_1_bn1_running_var, 0.1, 1e-05), kwargs = {})Jç
+pkg.torch.onnx.name_scopeso['', 'model', 'model.layer2', 'model.layer2.1', 'model.layer2.1.bn1', '_native_batch_norm_legit_no_training_8']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 93, in forward
+    out = self.bn1(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+Ñ
+
+getitem_24relu_7node_relu_7"ReluJõ
+	namespaceç: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer2: torch.nn.modules.container.Sequential/model.layer2.1: torchvision.models.resnet.BasicBlock/model.layer2.1.relu: torch.nn.modules.activation.ReLU/relu_7: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Jâ
+pkg.torch.onnx.fx_nodeo%relu_7 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%getitem_24,), kwargs = {})Jn
+pkg.torch.onnx.name_scopesP['', 'model', 'model.layer2', 'model.layer2.1', 'model.layer2.1.relu', 'relu_7']Jæ
+pkg.torch.onnx.stack_traceüFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 94, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+–
+relu_7
+model.layer2.1.conv2.weight
+ model.layer2.1.conv2.weight_bias
+getitem_27node_Conv_309"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J‡
+	namespace“: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer2: torch.nn.modules.container.Sequential/model.layer2.1: torchvision.models.resnet.BasicBlock/model.layer2.1.bn2: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_9: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J‘
+pkg.torch.onnx.fx_nodeπ%_native_batch_norm_legit_no_training_9 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_9, %p_model_layer2_1_bn2_weight, %p_model_layer2_1_bn2_bias, %b_model_layer2_1_bn2_running_mean, %b_model_layer2_1_bn2_running_var, 0.1, 1e-05), kwargs = {})Jç
+pkg.torch.onnx.name_scopeso['', 'model', 'model.layer2', 'model.layer2.1', 'model.layer2.1.bn2', '_native_batch_norm_legit_no_training_9']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 97, in forward
+    out = self.bn2(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+‡
+
+
+getitem_27
+relu_6add_3
+node_add_3"AddJ‚
+	namespace‘: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer2: torch.nn.modules.container.Sequential/model.layer2.1: torchvision.models.resnet.BasicBlock/add_3: aten.add.TensorJŸ
+pkg.torch.onnx.class_hierarchy∂['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'aten.add.Tensor']Jé
+pkg.torch.onnx.fx_nodet%add_3 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%getitem_27, %relu_6), kwargs = {})JV
+pkg.torch.onnx.name_scopes8['', 'model', 'model.layer2', 'model.layer2.1', 'add_3']Já
+pkg.torch.onnx.stack_traceËFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 102, in forward
+    out += identity
+˚
+add_3relu_8node_relu_8"ReluJõ
+	namespaceç: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer2: torch.nn.modules.container.Sequential/model.layer2.1: torchvision.models.resnet.BasicBlock/model.layer2.1.relu: torch.nn.modules.activation.ReLU/relu_8: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']JÑ
+pkg.torch.onnx.fx_nodej%relu_8 : [num_users=2] = call_function[target=torch.ops.aten.relu.default](args = (%add_3,), kwargs = {})Jn
+pkg.torch.onnx.name_scopesP['', 'model', 'model.layer2', 'model.layer2.1', 'model.layer2.1.relu', 'relu_8']Jø
+pkg.torch.onnx.stack_trace†File "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 103, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+‘
+relu_8
+model.layer3.0.conv1.weight
+ model.layer3.0.conv1.weight_bias
+getitem_30node_Conv_311"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J·
+	namespace”: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer3: torch.nn.modules.container.Sequential/model.layer3.0: torchvision.models.resnet.BasicBlock/model.layer3.0.bn1: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_10: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J÷
+pkg.torch.onnx.fx_nodeª%_native_batch_norm_legit_no_training_10 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_10, %p_model_layer3_0_bn1_weight, %p_model_layer3_0_bn1_bias, %b_model_layer3_0_bn1_running_mean, %b_model_layer3_0_bn1_running_var, 0.1, 1e-05), kwargs = {})Jé
+pkg.torch.onnx.name_scopesp['', 'model', 'model.layer3', 'model.layer3.0', 'model.layer3.0.bn1', '_native_batch_norm_legit_no_training_10']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 93, in forward
+    out = self.bn1(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+Ñ
+
+getitem_30relu_9node_relu_9"ReluJõ
+	namespaceç: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer3: torch.nn.modules.container.Sequential/model.layer3.0: torchvision.models.resnet.BasicBlock/model.layer3.0.relu: torch.nn.modules.activation.ReLU/relu_9: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Jâ
+pkg.torch.onnx.fx_nodeo%relu_9 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%getitem_30,), kwargs = {})Jn
+pkg.torch.onnx.name_scopesP['', 'model', 'model.layer3', 'model.layer3.0', 'model.layer3.0.relu', 'relu_9']Jæ
+pkg.torch.onnx.stack_traceüFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 94, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+‘
+relu_9
+model.layer3.0.conv2.weight
+ model.layer3.0.conv2.weight_bias
+getitem_33node_Conv_313"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J·
+	namespace”: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer3: torch.nn.modules.container.Sequential/model.layer3.0: torchvision.models.resnet.BasicBlock/model.layer3.0.bn2: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_11: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J÷
+pkg.torch.onnx.fx_nodeª%_native_batch_norm_legit_no_training_11 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_11, %p_model_layer3_0_bn2_weight, %p_model_layer3_0_bn2_bias, %b_model_layer3_0_bn2_running_mean, %b_model_layer3_0_bn2_running_var, 0.1, 1e-05), kwargs = {})Jé
+pkg.torch.onnx.name_scopesp['', 'model', 'model.layer3', 'model.layer3.0', 'model.layer3.0.bn2', '_native_batch_norm_legit_no_training_11']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 97, in forward
+    out = self.bn2(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+»
+relu_8
+"model.layer3.0.downsample.0.weight
+'model.layer3.0.downsample.0.weight_bias
+getitem_36node_Conv_315"Conv*
+group†*
+pads@ @ @ @ †*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J´
+	namespaceù: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer3: torch.nn.modules.container.Sequential/model.layer3.0: torchvision.models.resnet.BasicBlock/model.layer3.0.downsample: torch.nn.modules.container.Sequential/model.layer3.0.downsample.1: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_12: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJŒ
+pkg.torch.onnx.class_hierarchy´['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J˙
+pkg.torch.onnx.fx_nodeﬂ%_native_batch_norm_legit_no_training_12 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_12, %p_model_layer3_0_downsample_1_weight, %p_model_layer3_0_downsample_1_bias, %b_model_layer3_0_downsample_1_running_mean, %b_model_layer3_0_downsample_1_running_var, 0.1, 1e-05), kwargs = {})Jµ
+pkg.torch.onnx.name_scopesñ['', 'model', 'model.layer3', 'model.layer3.0', 'model.layer3.0.downsample', 'model.layer3.0.downsample.1', '_native_batch_norm_legit_no_training_12']JŒ
+pkg.torch.onnx.stack_traceØFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 100, in forward
+    identity = self.downsample(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+Ë
+
+
+getitem_33
+
+getitem_36add_4
+node_add_4"AddJ‚
+	namespace‘: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer3: torch.nn.modules.container.Sequential/model.layer3.0: torchvision.models.resnet.BasicBlock/add_4: aten.add.TensorJŸ
+pkg.torch.onnx.class_hierarchy∂['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'aten.add.Tensor']Jí
+pkg.torch.onnx.fx_nodex%add_4 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%getitem_33, %getitem_36), kwargs = {})JV
+pkg.torch.onnx.name_scopes8['', 'model', 'model.layer3', 'model.layer3.0', 'add_4']Já
+pkg.torch.onnx.stack_traceËFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 102, in forward
+    out += identity
+Ä
+add_4relu_10node_relu_10"ReluJú
+	namespaceé: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer3: torch.nn.modules.container.Sequential/model.layer3.0: torchvision.models.resnet.BasicBlock/model.layer3.0.relu: torch.nn.modules.activation.ReLU/relu_10: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']JÖ
+pkg.torch.onnx.fx_nodek%relu_10 : [num_users=2] = call_function[target=torch.ops.aten.relu.default](args = (%add_4,), kwargs = {})Jo
+pkg.torch.onnx.name_scopesQ['', 'model', 'model.layer3', 'model.layer3.0', 'model.layer3.0.relu', 'relu_10']Jø
+pkg.torch.onnx.stack_trace†File "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 103, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+’
+relu_10
+model.layer3.1.conv1.weight
+ model.layer3.1.conv1.weight_bias
+getitem_39node_Conv_317"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J·
+	namespace”: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer3: torch.nn.modules.container.Sequential/model.layer3.1: torchvision.models.resnet.BasicBlock/model.layer3.1.bn1: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_13: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J÷
+pkg.torch.onnx.fx_nodeª%_native_batch_norm_legit_no_training_13 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_13, %p_model_layer3_1_bn1_weight, %p_model_layer3_1_bn1_bias, %b_model_layer3_1_bn1_running_mean, %b_model_layer3_1_bn1_running_var, 0.1, 1e-05), kwargs = {})Jé
+pkg.torch.onnx.name_scopesp['', 'model', 'model.layer3', 'model.layer3.1', 'model.layer3.1.bn1', '_native_batch_norm_legit_no_training_13']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 93, in forward
+    out = self.bn1(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+â
+
+getitem_39relu_11node_relu_11"ReluJú
+	namespaceé: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer3: torch.nn.modules.container.Sequential/model.layer3.1: torchvision.models.resnet.BasicBlock/model.layer3.1.relu: torch.nn.modules.activation.ReLU/relu_11: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Jä
+pkg.torch.onnx.fx_nodep%relu_11 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%getitem_39,), kwargs = {})Jo
+pkg.torch.onnx.name_scopesQ['', 'model', 'model.layer3', 'model.layer3.1', 'model.layer3.1.relu', 'relu_11']Jæ
+pkg.torch.onnx.stack_traceüFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 94, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+’
+relu_11
+model.layer3.1.conv2.weight
+ model.layer3.1.conv2.weight_bias
+getitem_42node_Conv_319"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J·
+	namespace”: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer3: torch.nn.modules.container.Sequential/model.layer3.1: torchvision.models.resnet.BasicBlock/model.layer3.1.bn2: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_14: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J÷
+pkg.torch.onnx.fx_nodeª%_native_batch_norm_legit_no_training_14 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_14, %p_model_layer3_1_bn2_weight, %p_model_layer3_1_bn2_bias, %b_model_layer3_1_bn2_running_mean, %b_model_layer3_1_bn2_running_var, 0.1, 1e-05), kwargs = {})Jé
+pkg.torch.onnx.name_scopesp['', 'model', 'model.layer3', 'model.layer3.1', 'model.layer3.1.bn2', '_native_batch_norm_legit_no_training_14']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 97, in forward
+    out = self.bn2(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+‚
+
+
+getitem_42
+relu_10add_5
+node_add_5"AddJ‚
+	namespace‘: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer3: torch.nn.modules.container.Sequential/model.layer3.1: torchvision.models.resnet.BasicBlock/add_5: aten.add.TensorJŸ
+pkg.torch.onnx.class_hierarchy∂['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'aten.add.Tensor']Jè
+pkg.torch.onnx.fx_nodeu%add_5 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%getitem_42, %relu_10), kwargs = {})JV
+pkg.torch.onnx.name_scopes8['', 'model', 'model.layer3', 'model.layer3.1', 'add_5']Já
+pkg.torch.onnx.stack_traceËFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 102, in forward
+    out += identity
+Ä
+add_5relu_12node_relu_12"ReluJú
+	namespaceé: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer3: torch.nn.modules.container.Sequential/model.layer3.1: torchvision.models.resnet.BasicBlock/model.layer3.1.relu: torch.nn.modules.activation.ReLU/relu_12: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']JÖ
+pkg.torch.onnx.fx_nodek%relu_12 : [num_users=2] = call_function[target=torch.ops.aten.relu.default](args = (%add_5,), kwargs = {})Jo
+pkg.torch.onnx.name_scopesQ['', 'model', 'model.layer3', 'model.layer3.1', 'model.layer3.1.relu', 'relu_12']Jø
+pkg.torch.onnx.stack_trace†File "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 103, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+’
+relu_12
+model.layer4.0.conv1.weight
+ model.layer4.0.conv1.weight_bias
+getitem_45node_Conv_321"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J·
+	namespace”: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer4: torch.nn.modules.container.Sequential/model.layer4.0: torchvision.models.resnet.BasicBlock/model.layer4.0.bn1: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_15: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J÷
+pkg.torch.onnx.fx_nodeª%_native_batch_norm_legit_no_training_15 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_15, %p_model_layer4_0_bn1_weight, %p_model_layer4_0_bn1_bias, %b_model_layer4_0_bn1_running_mean, %b_model_layer4_0_bn1_running_var, 0.1, 1e-05), kwargs = {})Jé
+pkg.torch.onnx.name_scopesp['', 'model', 'model.layer4', 'model.layer4.0', 'model.layer4.0.bn1', '_native_batch_norm_legit_no_training_15']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 93, in forward
+    out = self.bn1(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+â
+
+getitem_45relu_13node_relu_13"ReluJú
+	namespaceé: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer4: torch.nn.modules.container.Sequential/model.layer4.0: torchvision.models.resnet.BasicBlock/model.layer4.0.relu: torch.nn.modules.activation.ReLU/relu_13: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Jä
+pkg.torch.onnx.fx_nodep%relu_13 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%getitem_45,), kwargs = {})Jo
+pkg.torch.onnx.name_scopesQ['', 'model', 'model.layer4', 'model.layer4.0', 'model.layer4.0.relu', 'relu_13']Jæ
+pkg.torch.onnx.stack_traceüFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 94, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+’
+relu_13
+model.layer4.0.conv2.weight
+ model.layer4.0.conv2.weight_bias
+getitem_48node_Conv_323"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J·
+	namespace”: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer4: torch.nn.modules.container.Sequential/model.layer4.0: torchvision.models.resnet.BasicBlock/model.layer4.0.bn2: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_16: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J÷
+pkg.torch.onnx.fx_nodeª%_native_batch_norm_legit_no_training_16 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_16, %p_model_layer4_0_bn2_weight, %p_model_layer4_0_bn2_bias, %b_model_layer4_0_bn2_running_mean, %b_model_layer4_0_bn2_running_var, 0.1, 1e-05), kwargs = {})Jé
+pkg.torch.onnx.name_scopesp['', 'model', 'model.layer4', 'model.layer4.0', 'model.layer4.0.bn2', '_native_batch_norm_legit_no_training_16']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 97, in forward
+    out = self.bn2(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+…
+relu_12
+"model.layer4.0.downsample.0.weight
+'model.layer4.0.downsample.0.weight_bias
+getitem_51node_Conv_325"Conv*
+group†*
+pads@ @ @ @ †*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J´
+	namespaceù: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer4: torch.nn.modules.container.Sequential/model.layer4.0: torchvision.models.resnet.BasicBlock/model.layer4.0.downsample: torch.nn.modules.container.Sequential/model.layer4.0.downsample.1: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_17: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJŒ
+pkg.torch.onnx.class_hierarchy´['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.container.Sequential', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J˙
+pkg.torch.onnx.fx_nodeﬂ%_native_batch_norm_legit_no_training_17 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_17, %p_model_layer4_0_downsample_1_weight, %p_model_layer4_0_downsample_1_bias, %b_model_layer4_0_downsample_1_running_mean, %b_model_layer4_0_downsample_1_running_var, 0.1, 1e-05), kwargs = {})Jµ
+pkg.torch.onnx.name_scopesñ['', 'model', 'model.layer4', 'model.layer4.0', 'model.layer4.0.downsample', 'model.layer4.0.downsample.1', '_native_batch_norm_legit_no_training_17']JŒ
+pkg.torch.onnx.stack_traceØFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 100, in forward
+    identity = self.downsample(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+Ë
+
+
+getitem_48
+
+getitem_51add_6
+node_add_6"AddJ‚
+	namespace‘: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer4: torch.nn.modules.container.Sequential/model.layer4.0: torchvision.models.resnet.BasicBlock/add_6: aten.add.TensorJŸ
+pkg.torch.onnx.class_hierarchy∂['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'aten.add.Tensor']Jí
+pkg.torch.onnx.fx_nodex%add_6 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%getitem_48, %getitem_51), kwargs = {})JV
+pkg.torch.onnx.name_scopes8['', 'model', 'model.layer4', 'model.layer4.0', 'add_6']Já
+pkg.torch.onnx.stack_traceËFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 102, in forward
+    out += identity
+Ä
+add_6relu_14node_relu_14"ReluJú
+	namespaceé: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer4: torch.nn.modules.container.Sequential/model.layer4.0: torchvision.models.resnet.BasicBlock/model.layer4.0.relu: torch.nn.modules.activation.ReLU/relu_14: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']JÖ
+pkg.torch.onnx.fx_nodek%relu_14 : [num_users=2] = call_function[target=torch.ops.aten.relu.default](args = (%add_6,), kwargs = {})Jo
+pkg.torch.onnx.name_scopesQ['', 'model', 'model.layer4', 'model.layer4.0', 'model.layer4.0.relu', 'relu_14']Jø
+pkg.torch.onnx.stack_trace†File "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 103, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+’
+relu_14
+model.layer4.1.conv1.weight
+ model.layer4.1.conv1.weight_bias
+getitem_54node_Conv_327"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J·
+	namespace”: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer4: torch.nn.modules.container.Sequential/model.layer4.1: torchvision.models.resnet.BasicBlock/model.layer4.1.bn1: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_18: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J÷
+pkg.torch.onnx.fx_nodeª%_native_batch_norm_legit_no_training_18 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_18, %p_model_layer4_1_bn1_weight, %p_model_layer4_1_bn1_bias, %b_model_layer4_1_bn1_running_mean, %b_model_layer4_1_bn1_running_var, 0.1, 1e-05), kwargs = {})Jé
+pkg.torch.onnx.name_scopesp['', 'model', 'model.layer4', 'model.layer4.1', 'model.layer4.1.bn1', '_native_batch_norm_legit_no_training_18']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 93, in forward
+    out = self.bn1(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+â
+
+getitem_54relu_15node_relu_15"ReluJú
+	namespaceé: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer4: torch.nn.modules.container.Sequential/model.layer4.1: torchvision.models.resnet.BasicBlock/model.layer4.1.relu: torch.nn.modules.activation.ReLU/relu_15: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Jä
+pkg.torch.onnx.fx_nodep%relu_15 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%getitem_54,), kwargs = {})Jo
+pkg.torch.onnx.name_scopesQ['', 'model', 'model.layer4', 'model.layer4.1', 'model.layer4.1.relu', 'relu_15']Jæ
+pkg.torch.onnx.stack_traceüFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 94, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+’
+relu_15
+model.layer4.1.conv2.weight
+ model.layer4.1.conv2.weight_bias
+getitem_57node_Conv_329"Conv*
+group†*
+pads@@@@†*
+auto_pad"NOTSET†*
+strides@@†*
+	dilations@@†*
+kernel_shape@@†J·
+	namespace”: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer4: torch.nn.modules.container.Sequential/model.layer4.1: torchvision.models.resnet.BasicBlock/model.layer4.1.bn2: torch.nn.modules.batchnorm.BatchNorm2d/_native_batch_norm_legit_no_training_19: aten._native_batch_norm_legit_no_training.defaultJV
+!pkg.onnxscript.rewriter.rule_name1FuseBatchNormIntoConv, RemoveOptionalBiasFromConvJ•
+pkg.torch.onnx.class_hierarchyÇ['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.batchnorm.BatchNorm2d', 'aten._native_batch_norm_legit_no_training.default']J÷
+pkg.torch.onnx.fx_nodeª%_native_batch_norm_legit_no_training_19 : [num_users=1] = call_function[target=torch.ops.aten._native_batch_norm_legit_no_training.default](args = (%conv2d_19, %p_model_layer4_1_bn2_weight, %p_model_layer4_1_bn2_bias, %b_model_layer4_1_bn2_running_mean, %b_model_layer4_1_bn2_running_var, 0.1, 1e-05), kwargs = {})Jé
+pkg.torch.onnx.name_scopesp['', 'model', 'model.layer4', 'model.layer4.1', 'model.layer4.1.bn2', '_native_batch_norm_legit_no_training_19']J¶
+pkg.torch.onnx.stack_traceáFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 97, in forward
+    out = self.bn2(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+‚
+
+
+getitem_57
+relu_14add_7
+node_add_7"AddJ‚
+	namespace‘: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer4: torch.nn.modules.container.Sequential/model.layer4.1: torchvision.models.resnet.BasicBlock/add_7: aten.add.TensorJŸ
+pkg.torch.onnx.class_hierarchy∂['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'aten.add.Tensor']Jè
+pkg.torch.onnx.fx_nodeu%add_7 : [num_users=1] = call_function[target=torch.ops.aten.add.Tensor](args = (%getitem_57, %relu_14), kwargs = {})JV
+pkg.torch.onnx.name_scopes8['', 'model', 'model.layer4', 'model.layer4.1', 'add_7']Já
+pkg.torch.onnx.stack_traceËFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 102, in forward
+    out += identity
+Ä
+add_7relu_16node_relu_16"ReluJú
+	namespaceé: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.layer4: torch.nn.modules.container.Sequential/model.layer4.1: torchvision.models.resnet.BasicBlock/model.layer4.1.relu: torch.nn.modules.activation.ReLU/relu_16: aten.relu.defaultJˇ
+pkg.torch.onnx.class_hierarchy‹['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.container.Sequential', 'torchvision.models.resnet.BasicBlock', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']JÖ
+pkg.torch.onnx.fx_nodek%relu_16 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%add_7,), kwargs = {})Jo
+pkg.torch.onnx.name_scopesQ['', 'model', 'model.layer4', 'model.layer4.1', 'model.layer4.1.relu', 'relu_16']Jø
+pkg.torch.onnx.stack_trace†File "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 103, in forward
+    out = self.relu(out)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 143, in forward
+    return F.relu(input, inplace=self.inplace)
+≤	
+relu_16
+val_225mean	node_mean"
+ReduceMean*
+noop_with_empty_axes †*
+keepdims†J∞
+	namespace¢: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.avgpool: torch.nn.modules.pooling.AdaptiveAvgPool2d/mean: aten.mean.dimJ¥
+pkg.torch.onnx.class_hierarchyë['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.pooling.AdaptiveAvgPool2d', 'aten.mean.dim']Jè
+pkg.torch.onnx.fx_nodeu%mean : [num_users=1] = call_function[target=torch.ops.aten.mean.dim](args = (%relu_16, [-1, -2], True), kwargs = {})JD
+pkg.torch.onnx.name_scopes&['', 'model', 'model.avgpool', 'mean']Jê
+pkg.torch.onnx.stack_traceÒFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/pooling.py", line 1514, in forward
+    return F.adaptive_avg_pool2d(input, self.output_size)
+€
+mean
+val_229view	node_view"Reshape*
+	allowzero†Jy
+	namespacel: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/view: aten.view.defaultJâ
+pkg.torch.onnx.class_hierarchyg['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'aten.view.default']Jä
+pkg.torch.onnx.fx_nodep%view : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%mean, [1, 512]), kwargs = {})J3
+pkg.torch.onnx.name_scopes['', 'model', 'view']J‘
+pkg.torch.onnx.stack_traceµFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+÷	
+view
+model.fc.weight
+model.fc.biasoutputnode_linear"Gemm*
+beta  Ä?†*
+transB†*
+alpha  Ä?†*
+transA †Jß
+	namespaceô: src.models.model_factory.QuantizableResNet/model: torchvision.models.resnet.ResNet/model.fc: torch.nn.modules.linear.Linear/linear: aten.linear.defaultJÆ
+pkg.torch.onnx.class_hierarchyã['src.models.model_factory.QuantizableResNet', 'torchvision.models.resnet.ResNet', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J´
+pkg.torch.onnx.fx_nodeê%linear : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%view, %p_model_fc_weight, %p_model_fc_bias), kwargs = {})JA
+pkg.torch.onnx.name_scopes#['', 'model', 'model.fc', 'linear']Já
+pkg.torch.onnx.stack_traceËFile "/sessions/gracious-great-dijkstra/mnt/TinyEdge/tinyml-edge-benchmark/src/models/model_factory.py", line 21, in forward
+    x = self.model(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/sessions/gracious-great-dijkstra/.local/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+main_graph*=
+Bmodel.fc.biasJ(â¯<H˚<Mªû∫CSˇ<z=w<Vx<¢b¢<ü&ŸºM™<äVΩª*a@Bmodel.conv1.weightj
+locationresnet18.onnx.dataj
+offset17920j
+length6912p*m@@Bmodel.layer1.0.conv1.weightj
+locationresnet18.onnx.dataj
+offset209152j
+length147456p*m@@Bmodel.layer1.0.conv2.weightj
+locationresnet18.onnx.dataj
+offset356608j
+length147456p*m@@Bmodel.layer1.1.conv1.weightj
+locationresnet18.onnx.dataj
+offset504064j
+length147456p*m@@Bmodel.layer1.1.conv2.weightj
+locationresnet18.onnx.dataj
+offset651520j
+length147456p*nÄ@Bmodel.layer2.0.conv1.weightj
+locationresnet18.onnx.dataj
+offset798976j
+length294912p*pÄÄBmodel.layer2.0.conv2.weightj
+locationresnet18.onnx.dataj
+offset1618176j
+length589824p*sÄ@B"model.layer2.0.downsample.0.weightj
+locationresnet18.onnx.dataj
+offset45312j
+length32768p*pÄÄBmodel.layer2.1.conv1.weightj
+locationresnet18.onnx.dataj
+offset2208000j
+length589824p*pÄÄBmodel.layer2.1.conv2.weightj
+locationresnet18.onnx.dataj
+offset2797824j
+length589824p*qÄÄBmodel.layer3.0.conv1.weightj
+locationresnet18.onnx.dataj
+offset3407872j
+length1179648p*qÄÄBmodel.layer3.0.conv2.weightj
+locationresnet18.onnx.dataj
+offset4587520j
+length2359296p*uÄÄB"model.layer3.0.downsample.0.weightj
+locationresnet18.onnx.dataj
+offset78080j
+length131072p*qÄÄBmodel.layer3.1.conv1.weightj
+locationresnet18.onnx.dataj
+offset6946816j
+length2359296p*qÄÄBmodel.layer3.1.conv2.weightj
+locationresnet18.onnx.dataj
+offset9306112j
+length2359296p*rÄÄBmodel.layer4.0.conv1.weightj
+locationresnet18.onnx.dataj
+offset11665408j
+length4718592p*rÄÄBmodel.layer4.0.conv2.weightj
+locationresnet18.onnx.dataj
+offset16384000j
+length9437184p*wÄÄB"model.layer4.0.downsample.0.weightj
+locationresnet18.onnx.dataj
+offset1093888j
+length524288p*rÄÄBmodel.layer4.1.conv1.weightj
+locationresnet18.onnx.dataj
+offset25821184j
+length9437184p*rÄÄBmodel.layer4.1.conv2.weightj
+locationresnet18.onnx.dataj
+offset35258368j
+length9437184p*\
+ÄBmodel.fc.weightj
+locationresnet18.onnx.dataj
+offset24832j
+length20480p*Bval_225Jˇˇˇˇˇˇˇˇ˛ˇˇˇˇˇˇˇ*Bval_229J              *†@Bmodel.conv1.weight_biasJÄ≈“|>…r>`†]æØ™h>©Rr> }UΩ‰T-=Uc`>Q{P>ÍX>ì-_>˘2AæäjE>	ñ9>˜µ(> z>ŸÉi>NÅ>Q6NæÄJk>˛aDæC=v>–z{>˜/]æ.m>•∞1>9PR>‡H>—”1æÂdTææ2T>òyæ∏%{æ£Fæß"Ñ>2Bd>ûù>§¨|>∏üc>DzÖæÿT~æ·Q[ΩaYw>÷åx>~Rz>W˜p>û?b>Œ˛TæNCmæ®sæùaD>bU>…ˇœ=≥À°Ωlp>™¯^>[òΩ•“v>ı+Y>ã-ì=pÎk>N}>&æu∞Næ*©@B model.layer1.0.conv1.weight_biasJÄ0ÍΩâx‡=Qn]ø.m?kò;B9Ø<Å?
+æáΩøK™€>~Z?à?	Ü'øÈ}qøçXÕ> äeΩk¡Ìæª≠Ø>¸ '>çÙòæÎ§π>ƒUøIM?õ»_?Ó]?ûm?®FßΩ*éÑ?;T>ïb	æU£Êæ8øæ∞æ¨>‚π=«l&ø„¶æ"zuøgD8ø÷≥"= ^Z>‰©øêxı>ªÖæA¨&?ºzﬂ>aÙ§>X<©æ]ñΩ≥0øŸM$?‰æ¯–ørÃB=ó∆∂>4\ó?óáZøU#—æ®väø-‹£=ò]@øö°Æ=!ñ—æ2ZÔΩ*
+l?NÍ8æ*©@B model.layer1.0.conv2.weight_biasJÄpÉÚæ–/=Æß=T/æ[3øöáædª?oo"?ÚêIøi?ÂıæÆ~&øcMÉ>∂ßá>±˙XæNQ|>t3=ıû>à#—>#¢næ^Aæ?›Oº=˚Ç=,¢e?eÃ%?ûË=YlÄøÂ#^?0≤uæ87ô?Ú7? µa>)⁄‡æB‡(?Î"æ∑˘;?ëXø&ÚE?ÿ∂˚æò´£æÃØ»Ωı›>?ÑﬁΩ˘ÅB?A`p>ä3ÖæB&Ó=ªÑDæKßuΩfµ7?VΩ·æÃYç=≥[øpKπ>ï®?«Íâ>üÁWæ⁄d—</5∆æ;õΩæY°pΩb‚æ|@j?πÒU?*©@B model.layer1.1.conv1.weight_biasJÄ¥õ>Ô’>{>Ÿ‘Û>M>€˜Søåø>‰°ã>Üw+ø'?»5dΩ!Êÿ>ÛÜû?}óænˇßæ˛W>øäΩCæ‰:>&Ø>©Ôjæã≠ >ˇTø(HY?`ÒÖæç8äæ◊)	æ`˚ÓæË«óΩ}f?;˝#?#Ô =a2›>ÙTøW‚T?gøQøûƒ"?6&/ø8«–>úM>!_#øË˘ß?T"Ä?≈ùø~íL=JÇW?û¶5øÖZ?	πô>ùF?ﬂPøt8<æc _æÂ˚ıæ4ô>_ñ@ørqA>‘„æ?;ú-?Ωå?‘sˇæsn2=…∞S?ΩƒÖæ≈=zæ*©@B model.layer1.1.conv2.weight_biasJÄ«π√Ω9JdøRZVø^!ö>≥w/?9◊√æGº∂>È øÑ9?∑ø≠≈ﬁΩgÕFæT\∂>Ø2?j1Ùæº¬Üø
+0U=1ñª=π≥æ.Î?rÕ>à:øFùT?… …>Ñ7¢=Ñã>™∏¨æ°ŒàΩ·CgæÀk@?(°ïæZ˝>îï!øıŸÅæügõøµΩ∫‚øƒ¥9;Ë@õ>⁄¥ß?øø˙>Â÷s>¨jcøª[ø€Ñ¢æk>9§<í†A?Ê?q2æ>Ö4e?TáΩÇçø&∏Ω1ø˜!öø§.íæÛ˜x?Ó8°æk¸ >jÕ°>*}∞>óîé>*eÄB model.layer2.0.conv1.weight_biasj
+locationresnet18.onnx.dataj
+offset0j
+length512p*gÄB model.layer2.0.conv2.weight_biasj
+locationresnet18.onnx.dataj
+offset512j
+length512p*oÄB'model.layer2.0.downsample.0.weight_biasj
+locationresnet18.onnx.dataj
+offset1024j
+length512p*hÄB model.layer2.1.conv1.weight_biasj
+locationresnet18.onnx.dataj
+offset1536j
+length512p*hÄB model.layer2.1.conv2.weight_biasj
+locationresnet18.onnx.dataj
+offset2048j
+length512p*iÄB model.layer3.0.conv1.weight_biasj
+locationresnet18.onnx.dataj
+offset2560j
+length1024p*iÄB model.layer3.0.conv2.weight_biasj
+locationresnet18.onnx.dataj
+offset3584j
+length1024p*pÄB'model.layer3.0.downsample.0.weight_biasj
+locationresnet18.onnx.dataj
+offset4608j
+length1024p*iÄB model.layer3.1.conv1.weight_biasj
+locationresnet18.onnx.dataj
+offset5632j
+length1024p*iÄB model.layer3.1.conv2.weight_biasj
+locationresnet18.onnx.dataj
+offset6656j
+length1024p*iÄB model.layer4.0.conv1.weight_biasj
+locationresnet18.onnx.dataj
+offset7680j
+length2048p*iÄB model.layer4.0.conv2.weight_biasj
+locationresnet18.onnx.dataj
+offset9728j
+length2048p*qÄB'model.layer4.0.downsample.0.weight_biasj
+locationresnet18.onnx.dataj
+offset11776j
+length2048p*jÄB model.layer4.1.conv1.weight_biasj
+locationresnet18.onnx.dataj
+offset13824j
+length2048p*jÄB model.layer4.1.conv2.weight_biasj
+locationresnet18.onnx.dataj
+offset15872j
+length2048pZ≈
+input
+
+
+
+ 
+ "=
+/pkg.torch.export.graph_signature.InputSpec.kind
+USER_INPUT"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"&
+!pkg.torch.onnx.original_node_namexbÜ
+output
+
+
+
+"?
+0pkg.torch.export.graph_signature.OutputSpec.kindUSER_OUTPUT"+
+!pkg.torch.onnx.original_node_namelinearjŒ
+model.fc.bias
+
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"4
+!pkg.torch.onnx.original_node_namep_model_fc_biasj,
+model.conv1.weight
+
+@
+
+
+j5
+model.layer1.0.conv1.weight
+
+@
+@
+
+j5
+model.layer1.0.conv2.weight
+
+@
+@
+
+j5
+model.layer1.1.conv1.weight
+
+@
+@
+
+j5
+model.layer1.1.conv2.weight
+
+@
+@
+
+j6
+model.layer2.0.conv1.weight
+
+Ä
+@
+
+j7
+model.layer2.0.conv2.weight
+
+Ä
+Ä
+
+j=
+"model.layer2.0.downsample.0.weight
+
+Ä
+@
+
+j7
+model.layer2.1.conv1.weight
+
+Ä
+Ä
+
+j7
+model.layer2.1.conv2.weight
+
+Ä
+Ä
+
+j7
+model.layer3.0.conv1.weight
+
+Ä
+Ä
+
+j7
+model.layer3.0.conv2.weight
+
+Ä
+Ä
+
+j>
+"model.layer3.0.downsample.0.weight
+
+Ä
+Ä
+
+j7
+model.layer3.1.conv1.weight
+
+Ä
+Ä
+
+j7
+model.layer3.1.conv2.weight
+
+Ä
+Ä
+
+j7
+model.layer4.0.conv1.weight
+
+Ä
+Ä
+
+j7
+model.layer4.0.conv2.weight
+
+Ä
+Ä
+
+j>
+"model.layer4.0.downsample.0.weight
+
+Ä
+Ä
+
+j7
+model.layer4.1.conv1.weight
+
+Ä
+Ä
+
+j7
+model.layer4.1.conv2.weight
+
+Ä
+Ä
+
+j◊
+model.fc.weight
+	
+
+
+Ä"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"6
+!pkg.torch.onnx.original_node_namep_model_fc_weightjU
+val_225
+
+
+">
+$pkg.onnxscript.optimizer.folded_from['val_223', 'val_224']jU
+val_229
+
+
+">
+$pkg.onnxscript.optimizer.folded_from['val_227', 'val_228']j%
+model.conv1.weight_bias
+
+
+@j.
+ model.layer1.0.conv1.weight_bias
+
+
+@j.
+ model.layer1.0.conv2.weight_bias
+
+
+@j.
+ model.layer1.1.conv1.weight_bias
+
+
+@j.
+ model.layer1.1.conv2.weight_bias
+
+
+@j/
+ model.layer2.0.conv1.weight_bias
+	
+Äj/
+ model.layer2.0.conv2.weight_bias
+	
+Äj6
+'model.layer2.0.downsample.0.weight_bias
+	
+Äj/
+ model.layer2.1.conv1.weight_bias
+	
+Äj/
+ model.layer2.1.conv2.weight_bias
+	
+Äj/
+ model.layer3.0.conv1.weight_bias
+	
+Äj/
+ model.layer3.0.conv2.weight_bias
+	
+Äj6
+'model.layer3.0.downsample.0.weight_bias
+	
+Äj/
+ model.layer3.1.conv1.weight_bias
+	
+Äj/
+ model.layer3.1.conv2.weight_bias
+	
+Äj/
+ model.layer4.0.conv1.weight_bias
+	
+Äj/
+ model.layer4.0.conv2.weight_bias
+	
+Äj6
+'model.layer4.0.downsample.0.weight_bias
+	
+Äj/
+ model.layer4.1.conv1.weight_bias
+	
+Äj/
+ model.layer4.1.conv2.weight_bias
+	
+Äj!
+getitem
+
+
+@
+ 
+ j
+relu
+
+
+@
+ 
+ j#
+	getitem_3
+
+
+@
+ 
+ j 
+relu_1
+
+
+@
+ 
+ j#
+	getitem_6
+
+
+@
+ 
+ j
+add
+
+
+@
+ 
+ j 
+relu_2
+
+
+@
+ 
+ j#
+	getitem_9
+
+
+@
+ 
+ j 
+relu_3
+
+
+@
+ 
+ j$
+
+getitem_12
+
+
+@
+ 
+ j
+add_1
+
+
+@
+ 
+ j 
+relu_4
+
+
+@
+ 
+ j%
+
+getitem_15
+
+
+Ä
+
+j!
+relu_5
+
+
+Ä
+
+j%
+
+getitem_18
+
+
+Ä
+
+j%
+
+getitem_21
+
+
+Ä
+
+j 
+add_2
+
+
+Ä
+
+j!
+relu_6
+
+
+Ä
+
+j%
+
+getitem_24
+
+
+Ä
+
+j!
+relu_7
+
+
+Ä
+
+j%
+
+getitem_27
+
+
+Ä
+
+j 
+add_3
+
+
+Ä
+
+j!
+relu_8
+
+
+Ä
+
+j%
+
+getitem_30
+
+
+Ä
+
+j!
+relu_9
+
+
+Ä
+
+j%
+
+getitem_33
+
+
+Ä
+
+j%
+
+getitem_36
+
+
+Ä
+
+j 
+add_4
+
+
+Ä
+
+j"
+relu_10
+
+
+Ä
+
+j%
+
+getitem_39
+
+
+Ä
+
+j"
+relu_11
+
+
+Ä
+
+j%
+
+getitem_42
+
+
+Ä
+
+j 
+add_5
+
+
+Ä
+
+j"
+relu_12
+
+
+Ä
+
+j%
+
+getitem_45
+
+
+Ä
+
+j"
+relu_13
+
+
+Ä
+
+j%
+
+getitem_48
+
+
+Ä
+
+j%
+
+getitem_51
+
+
+Ä
+
+j 
+add_6
+
+
+Ä
+
+j"
+relu_14
+
+
+Ä
+
+j%
+
+getitem_54
+
+
+Ä
+
+j"
+relu_15
+
+
+Ä
+
+j%
+
+getitem_57
+
+
+Ä
+
+j 
+add_7
+
+
+Ä
+
+j"
+relu_16
+
+
+Ä
+
+j
+mean
+
+
+Ä
+
+j
+view
+	
+
+ÄÇúV
+0pkg.torch.export.ExportedProgram.graph_signatureÁU
+# inputs
+p_model_conv1_weight: PARAMETER target='model.conv1.weight'
+p_model_bn1_weight: PARAMETER target='model.bn1.weight'
+p_model_bn1_bias: PARAMETER target='model.bn1.bias'
+p_model_layer1_0_conv1_weight: PARAMETER target='model.layer1.0.conv1.weight'
+p_model_layer1_0_bn1_weight: PARAMETER target='model.layer1.0.bn1.weight'
+p_model_layer1_0_bn1_bias: PARAMETER target='model.layer1.0.bn1.bias'
+p_model_layer1_0_conv2_weight: PARAMETER target='model.layer1.0.conv2.weight'
+p_model_layer1_0_bn2_weight: PARAMETER target='model.layer1.0.bn2.weight'
+p_model_layer1_0_bn2_bias: PARAMETER target='model.layer1.0.bn2.bias'
+p_model_layer1_1_conv1_weight: PARAMETER target='model.layer1.1.conv1.weight'
+p_model_layer1_1_bn1_weight: PARAMETER target='model.layer1.1.bn1.weight'
+p_model_layer1_1_bn1_bias: PARAMETER target='model.layer1.1.bn1.bias'
+p_model_layer1_1_conv2_weight: PARAMETER target='model.layer1.1.conv2.weight'
+p_model_layer1_1_bn2_weight: PARAMETER target='model.layer1.1.bn2.weight'
+p_model_layer1_1_bn2_bias: PARAMETER target='model.layer1.1.bn2.bias'
+p_model_layer2_0_conv1_weight: PARAMETER target='model.layer2.0.conv1.weight'
+p_model_layer2_0_bn1_weight: PARAMETER target='model.layer2.0.bn1.weight'
+p_model_layer2_0_bn1_bias: PARAMETER target='model.layer2.0.bn1.bias'
+p_model_layer2_0_conv2_weight: PARAMETER target='model.layer2.0.conv2.weight'
+p_model_layer2_0_bn2_weight: PARAMETER target='model.layer2.0.bn2.weight'
+p_model_layer2_0_bn2_bias: PARAMETER target='model.layer2.0.bn2.bias'
+p_model_layer2_0_downsample_0_weight: PARAMETER target='model.layer2.0.downsample.0.weight'
+p_model_layer2_0_downsample_1_weight: PARAMETER target='model.layer2.0.downsample.1.weight'
+p_model_layer2_0_downsample_1_bias: PARAMETER target='model.layer2.0.downsample.1.bias'
+p_model_layer2_1_conv1_weight: PARAMETER target='model.layer2.1.conv1.weight'
+p_model_layer2_1_bn1_weight: PARAMETER target='model.layer2.1.bn1.weight'
+p_model_layer2_1_bn1_bias: PARAMETER target='model.layer2.1.bn1.bias'
+p_model_layer2_1_conv2_weight: PARAMETER target='model.layer2.1.conv2.weight'
+p_model_layer2_1_bn2_weight: PARAMETER target='model.layer2.1.bn2.weight'
+p_model_layer2_1_bn2_bias: PARAMETER target='model.layer2.1.bn2.bias'
+p_model_layer3_0_conv1_weight: PARAMETER target='model.layer3.0.conv1.weight'
+p_model_layer3_0_bn1_weight: PARAMETER target='model.layer3.0.bn1.weight'
+p_model_layer3_0_bn1_bias: PARAMETER target='model.layer3.0.bn1.bias'
+p_model_layer3_0_conv2_weight: PARAMETER target='model.layer3.0.conv2.weight'
+p_model_layer3_0_bn2_weight: PARAMETER target='model.layer3.0.bn2.weight'
+p_model_layer3_0_bn2_bias: PARAMETER target='model.layer3.0.bn2.bias'
+p_model_layer3_0_downsample_0_weight: PARAMETER target='model.layer3.0.downsample.0.weight'
+p_model_layer3_0_downsample_1_weight: PARAMETER target='model.layer3.0.downsample.1.weight'
+p_model_layer3_0_downsample_1_bias: PARAMETER target='model.layer3.0.downsample.1.bias'
+p_model_layer3_1_conv1_weight: PARAMETER target='model.layer3.1.conv1.weight'
+p_model_layer3_1_bn1_weight: PARAMETER target='model.layer3.1.bn1.weight'
+p_model_layer3_1_bn1_bias: PARAMETER target='model.layer3.1.bn1.bias'
+p_model_layer3_1_conv2_weight: PARAMETER target='model.layer3.1.conv2.weight'
+p_model_layer3_1_bn2_weight: PARAMETER target='model.layer3.1.bn2.weight'
+p_model_layer3_1_bn2_bias: PARAMETER target='model.layer3.1.bn2.bias'
+p_model_layer4_0_conv1_weight: PARAMETER target='model.layer4.0.conv1.weight'
+p_model_layer4_0_bn1_weight: PARAMETER target='model.layer4.0.bn1.weight'
+p_model_layer4_0_bn1_bias: PARAMETER target='model.layer4.0.bn1.bias'
+p_model_layer4_0_conv2_weight: PARAMETER target='model.layer4.0.conv2.weight'
+p_model_layer4_0_bn2_weight: PARAMETER target='model.layer4.0.bn2.weight'
+p_model_layer4_0_bn2_bias: PARAMETER target='model.layer4.0.bn2.bias'
+p_model_layer4_0_downsample_0_weight: PARAMETER target='model.layer4.0.downsample.0.weight'
+p_model_layer4_0_downsample_1_weight: PARAMETER target='model.layer4.0.downsample.1.weight'
+p_model_layer4_0_downsample_1_bias: PARAMETER target='model.layer4.0.downsample.1.bias'
+p_model_layer4_1_conv1_weight: PARAMETER target='model.layer4.1.conv1.weight'
+p_model_layer4_1_bn1_weight: PARAMETER target='model.layer4.1.bn1.weight'
+p_model_layer4_1_bn1_bias: PARAMETER target='model.layer4.1.bn1.bias'
+p_model_layer4_1_conv2_weight: PARAMETER target='model.layer4.1.conv2.weight'
+p_model_layer4_1_bn2_weight: PARAMETER target='model.layer4.1.bn2.weight'
+p_model_layer4_1_bn2_bias: PARAMETER target='model.layer4.1.bn2.bias'
+p_model_fc_weight: PARAMETER target='model.fc.weight'
+p_model_fc_bias: PARAMETER target='model.fc.bias'
+b_model_bn1_running_mean: BUFFER target='model.bn1.running_mean' persistent=True
+b_model_bn1_running_var: BUFFER target='model.bn1.running_var' persistent=True
+b_model_bn1_num_batches_tracked: BUFFER target='model.bn1.num_batches_tracked' persistent=True
+b_model_layer1_0_bn1_running_mean: BUFFER target='model.layer1.0.bn1.running_mean' persistent=True
+b_model_layer1_0_bn1_running_var: BUFFER target='model.layer1.0.bn1.running_var' persistent=True
+b_model_layer1_0_bn1_num_batches_tracked: BUFFER target='model.layer1.0.bn1.num_batches_tracked' persistent=True
+b_model_layer1_0_bn2_running_mean: BUFFER target='model.layer1.0.bn2.running_mean' persistent=True
+b_model_layer1_0_bn2_running_var: BUFFER target='model.layer1.0.bn2.running_var' persistent=True
+b_model_layer1_0_bn2_num_batches_tracked: BUFFER target='model.layer1.0.bn2.num_batches_tracked' persistent=True
+b_model_layer1_1_bn1_running_mean: BUFFER target='model.layer1.1.bn1.running_mean' persistent=True
+b_model_layer1_1_bn1_running_var: BUFFER target='model.layer1.1.bn1.running_var' persistent=True
+b_model_layer1_1_bn1_num_batches_tracked: BUFFER target='model.layer1.1.bn1.num_batches_tracked' persistent=True
+b_model_layer1_1_bn2_running_mean: BUFFER target='model.layer1.1.bn2.running_mean' persistent=True
+b_model_layer1_1_bn2_running_var: BUFFER target='model.layer1.1.bn2.running_var' persistent=True
+b_model_layer1_1_bn2_num_batches_tracked: BUFFER target='model.layer1.1.bn2.num_batches_tracked' persistent=True
+b_model_layer2_0_bn1_running_mean: BUFFER target='model.layer2.0.bn1.running_mean' persistent=True
+b_model_layer2_0_bn1_running_var: BUFFER target='model.layer2.0.bn1.running_var' persistent=True
+b_model_layer2_0_bn1_num_batches_tracked: BUFFER target='model.layer2.0.bn1.num_batches_tracked' persistent=True
+b_model_layer2_0_bn2_running_mean: BUFFER target='model.layer2.0.bn2.running_mean' persistent=True
+b_model_layer2_0_bn2_running_var: BUFFER target='model.layer2.0.bn2.running_var' persistent=True
+b_model_layer2_0_bn2_num_batches_tracked: BUFFER target='model.layer2.0.bn2.num_batches_tracked' persistent=True
+b_model_layer2_0_downsample_1_running_mean: BUFFER target='model.layer2.0.downsample.1.running_mean' persistent=True
+b_model_layer2_0_downsample_1_running_var: BUFFER target='model.layer2.0.downsample.1.running_var' persistent=True
+b_model_layer2_0_downsample_1_num_batches_tracked: BUFFER target='model.layer2.0.downsample.1.num_batches_tracked' persistent=True
+b_model_layer2_1_bn1_running_mean: BUFFER target='model.layer2.1.bn1.running_mean' persistent=True
+b_model_layer2_1_bn1_running_var: BUFFER target='model.layer2.1.bn1.running_var' persistent=True
+b_model_layer2_1_bn1_num_batches_tracked: BUFFER target='model.layer2.1.bn1.num_batches_tracked' persistent=True
+b_model_layer2_1_bn2_running_mean: BUFFER target='model.layer2.1.bn2.running_mean' persistent=True
+b_model_layer2_1_bn2_running_var: BUFFER target='model.layer2.1.bn2.running_var' persistent=True
+b_model_layer2_1_bn2_num_batches_tracked: BUFFER target='model.layer2.1.bn2.num_batches_tracked' persistent=True
+b_model_layer3_0_bn1_running_mean: BUFFER target='model.layer3.0.bn1.running_mean' persistent=True
+b_model_layer3_0_bn1_running_var: BUFFER target='model.layer3.0.bn1.running_var' persistent=True
+b_model_layer3_0_bn1_num_batches_tracked: BUFFER target='model.layer3.0.bn1.num_batches_tracked' persistent=True
+b_model_layer3_0_bn2_running_mean: BUFFER target='model.layer3.0.bn2.running_mean' persistent=True
+b_model_layer3_0_bn2_running_var: BUFFER target='model.layer3.0.bn2.running_var' persistent=True
+b_model_layer3_0_bn2_num_batches_tracked: BUFFER target='model.layer3.0.bn2.num_batches_tracked' persistent=True
+b_model_layer3_0_downsample_1_running_mean: BUFFER target='model.layer3.0.downsample.1.running_mean' persistent=True
+b_model_layer3_0_downsample_1_running_var: BUFFER target='model.layer3.0.downsample.1.running_var' persistent=True
+b_model_layer3_0_downsample_1_num_batches_tracked: BUFFER target='model.layer3.0.downsample.1.num_batches_tracked' persistent=True
+b_model_layer3_1_bn1_running_mean: BUFFER target='model.layer3.1.bn1.running_mean' persistent=True
+b_model_layer3_1_bn1_running_var: BUFFER target='model.layer3.1.bn1.running_var' persistent=True
+b_model_layer3_1_bn1_num_batches_tracked: BUFFER target='model.layer3.1.bn1.num_batches_tracked' persistent=True
+b_model_layer3_1_bn2_running_mean: BUFFER target='model.layer3.1.bn2.running_mean' persistent=True
+b_model_layer3_1_bn2_running_var: BUFFER target='model.layer3.1.bn2.running_var' persistent=True
+b_model_layer3_1_bn2_num_batches_tracked: BUFFER target='model.layer3.1.bn2.num_batches_tracked' persistent=True
+b_model_layer4_0_bn1_running_mean: BUFFER target='model.layer4.0.bn1.running_mean' persistent=True
+b_model_layer4_0_bn1_running_var: BUFFER target='model.layer4.0.bn1.running_var' persistent=True
+b_model_layer4_0_bn1_num_batches_tracked: BUFFER target='model.layer4.0.bn1.num_batches_tracked' persistent=True
+b_model_layer4_0_bn2_running_mean: BUFFER target='model.layer4.0.bn2.running_mean' persistent=True
+b_model_layer4_0_bn2_running_var: BUFFER target='model.layer4.0.bn2.running_var' persistent=True
+b_model_layer4_0_bn2_num_batches_tracked: BUFFER target='model.layer4.0.bn2.num_batches_tracked' persistent=True
+b_model_layer4_0_downsample_1_running_mean: BUFFER target='model.layer4.0.downsample.1.running_mean' persistent=True
+b_model_layer4_0_downsample_1_running_var: BUFFER target='model.layer4.0.downsample.1.running_var' persistent=True
+b_model_layer4_0_downsample_1_num_batches_tracked: BUFFER target='model.layer4.0.downsample.1.num_batches_tracked' persistent=True
+b_model_layer4_1_bn1_running_mean: BUFFER target='model.layer4.1.bn1.running_mean' persistent=True
+b_model_layer4_1_bn1_running_var: BUFFER target='model.layer4.1.bn1.running_var' persistent=True
+b_model_layer4_1_bn1_num_batches_tracked: BUFFER target='model.layer4.1.bn1.num_batches_tracked' persistent=True
+b_model_layer4_1_bn2_running_mean: BUFFER target='model.layer4.1.bn2.running_mean' persistent=True
+b_model_layer4_1_bn2_running_var: BUFFER target='model.layer4.1.bn2.running_var' persistent=True
+b_model_layer4_1_bn2_num_batches_tracked: BUFFER target='model.layer4.1.bn2.num_batches_tracked' persistent=True
+x: USER_INPUT
+
+# outputs
+linear: USER_OUTPUT
+Ç8
+2pkg.torch.export.ExportedProgram.range_constraints{}B
+ 

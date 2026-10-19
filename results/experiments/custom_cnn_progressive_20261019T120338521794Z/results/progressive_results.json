@@ -1,0 +1,2082 @@
+{
+  "records": [
+    {
+      "stage": "stage_0_baseline",
+      "parameters": {
+        "total_params": 288746,
+        "trainable_params": 288746
+      },
+      "size": {
+        "size_mb": 1.1233835220336914,
+        "size_bytes": 1177953
+      },
+      "complexity": {
+        "macs": 655616,
+        "flops": 1311232,
+        "status": "estimated_from_conv_linear_hooks",
+        "note": "MACs count multiply-accumulate operations; FLOPs are reported as 2 per MAC."
+      },
+      "performance": {
+        "mean_latency_s": 0.0018199667400000076,
+        "median_latency_s": 0.0016190209999999983,
+        "std_latency_s": 0.0004715829433343991,
+        "p95_latency_s": 0.0027602121999999556,
+        "throughput_fps": 549.4605906918913,
+        "throughput_batch_size": 1,
+        "throughput_calculation": "batch_size / mean_batch_latency_s",
+        "input_shape": [
+          1,
+          3,
+          32,
+          32
+        ],
+        "iterations": 100
+      },
+      "memory": {
+        "peak_memory_mb": 198.828125,
+        "memory_delta_mb": 0.015625,
+        "method": "process_rss_before_after_forward",
+        "note": "RSS is a process-level estimate, not allocator-level peak activation memory."
+      },
+      "metrics": {
+        "accuracy": 0.8581,
+        "macro_precision": 0.8620179551727359,
+        "macro_recall": 0.8581,
+        "macro_f1": 0.858298174318197,
+        "per_class": {
+          "0": {
+            "precision": 0.8503401360544217,
+            "recall": 0.875,
+            "f1": 0.8624938393297191,
+            "support": 1000
+          },
+          "1": {
+            "precision": 0.9078822412155746,
+            "recall": 0.956,
+            "f1": 0.9313200194836824,
+            "support": 1000
+          },
+          "2": {
+            "precision": 0.774555659494855,
+            "recall": 0.828,
+            "f1": 0.8003866602223296,
+            "support": 1000
+          },
+          "3": {
+            "precision": 0.7343311506080449,
+            "recall": 0.785,
+            "f1": 0.7588206863218946,
+            "support": 1000
+          },
+          "4": {
+            "precision": 0.794351279788173,
+            "recall": 0.9,
+            "f1": 0.8438818565400844,
+            "support": 1000
+          },
+          "5": {
+            "precision": 0.8777506112469438,
+            "recall": 0.718,
+            "f1": 0.7898789878987899,
+            "support": 1000
+          },
+          "6": {
+            "precision": 0.9319429198682766,
+            "recall": 0.849,
+            "f1": 0.8885400313971743,
+            "support": 1000
+          },
+          "7": {
+            "precision": 0.8704965920155794,
+            "recall": 0.894,
+            "f1": 0.882091761223483,
+            "support": 1000
+          },
+          "8": {
+            "precision": 0.9359504132231405,
+            "recall": 0.906,
+            "f1": 0.9207317073170732,
+            "support": 1000
+          },
+          "9": {
+            "precision": 0.942578548212351,
+            "recall": 0.87,
+            "f1": 0.9048361934477379,
+            "support": 1000
+          }
+        },
+        "confusion_matrix": [
+          [
+            875,
+            6,
+            29,
+            19,
+            16,
+            0,
+            2,
+            7,
+            30,
+            16
+          ],
+          [
+            8,
+            956,
+            3,
+            5,
+            0,
+            2,
+            1,
+            1,
+            4,
+            20
+          ],
+          [
+            39,
+            1,
+            828,
+            30,
+            52,
+            18,
+            14,
+            10,
+            6,
+            2
+          ],
+          [
+            9,
+            0,
+            47,
+            785,
+            45,
+            54,
+            24,
+            26,
+            4,
+            6
+          ],
+          [
+            6,
+            0,
+            38,
+            10,
+            900,
+            4,
+            9,
+            31,
+            2,
+            0
+          ],
+          [
+            6,
+            1,
+            45,
+            133,
+            39,
+            718,
+            6,
+            49,
+            2,
+            1
+          ],
+          [
+            7,
+            0,
+            44,
+            45,
+            42,
+            8,
+            849,
+            3,
+            1,
+            1
+          ],
+          [
+            13,
+            0,
+            22,
+            20,
+            37,
+            12,
+            1,
+            894,
+            0,
+            1
+          ],
+          [
+            49,
+            12,
+            5,
+            13,
+            1,
+            1,
+            4,
+            3,
+            906,
+            6
+          ],
+          [
+            17,
+            77,
+            8,
+            9,
+            1,
+            1,
+            1,
+            3,
+            13,
+            870
+          ]
+        ]
+      },
+      "execution_device": "mps",
+      "model_name": "custom_cnn",
+      "parent_checkpoint": null,
+      "compression": null,
+      "best_validation_accuracy_percent": 86.52,
+      "best_validation_epoch": 30,
+      "training_duration_seconds": 723.5246472358704,
+      "checkpoint": "results/experiments/custom_cnn_progressive_20261019T120338521794Z/artifacts/stage_0_baseline_best_state.pth",
+      "artifact_execution_verified": true
+    },
+    {
+      "stage": "stage_1_pruned_immediate",
+      "parameters": {
+        "total_params": 162994,
+        "trainable_params": 162994
+      },
+      "size": {
+        "size_mb": 0.6425447463989258,
+        "size_bytes": 673757
+      },
+      "complexity": {
+        "macs": 498624,
+        "flops": 997248,
+        "status": "estimated_from_conv_linear_hooks",
+        "note": "MACs count multiply-accumulate operations; FLOPs are reported as 2 per MAC."
+      },
+      "performance": {
+        "mean_latency_s": 0.0016487725799999998,
+        "median_latency_s": 0.0015022504999999686,
+        "std_latency_s": 0.0003616113862034297,
+        "p95_latency_s": 0.002532045550000039,
+        "throughput_fps": 606.5117846634738,
+        "throughput_batch_size": 1,
+        "throughput_calculation": "batch_size / mean_batch_latency_s",
+        "input_shape": [
+          1,
+          3,
+          32,
+          32
+        ],
+        "iterations": 100
+      },
+      "memory": {
+        "peak_memory_mb": 211.59375,
+        "memory_delta_mb": 0.0,
+        "method": "process_rss_before_after_forward",
+        "note": "RSS is a process-level estimate, not allocator-level peak activation memory."
+      },
+      "metrics": {
+        "accuracy": 0.1432,
+        "macro_precision": 0.37882062024725965,
+        "macro_recall": 0.14319999999999997,
+        "macro_f1": 0.07169760250394114,
+        "per_class": {
+          "0": {
+            "precision": 0.6666666666666666,
+            "recall": 0.002,
+            "f1": 0.003988035892323031,
+            "support": 1000
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1000
+          },
+          "2": {
+            "precision": 0.3821138211382114,
+            "recall": 0.376,
+            "f1": 0.3790322580645161,
+            "support": 1000
+          },
+          "3": {
+            "precision": 0.18421052631578946,
+            "recall": 0.021,
+            "f1": 0.03770197486535009,
+            "support": 1000
+          },
+          "4": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1000
+          },
+          "5": {
+            "precision": 0.75,
+            "recall": 0.015,
+            "f1": 0.029411764705882353,
+            "support": 1000
+          },
+          "6": {
+            "precision": 0.11133763733152112,
+            "recall": 0.983,
+            "f1": 0.20002034794994406,
+            "support": 1000
+          },
+          "7": {
+            "precision": 0.6938775510204082,
+            "recall": 0.034,
+            "f1": 0.06482364156339371,
+            "support": 1000
+          },
+          "8": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1000
+          },
+          "9": {
+            "precision": 1.0,
+            "recall": 0.001,
+            "f1": 0.001998001998001998,
+            "support": 1000
+          }
+        },
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            229,
+            54,
+            0,
+            4,
+            708,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            7,
+            0,
+            0,
+            0,
+            990,
+            3,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            376,
+            21,
+            0,
+            1,
+            601,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            44,
+            21,
+            0,
+            0,
+            934,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            162,
+            1,
+            0,
+            0,
+            835,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            49,
+            7,
+            0,
+            15,
+            929,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            16,
+            1,
+            0,
+            0,
+            983,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            34,
+            1,
+            0,
+            0,
+            931,
+            34,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            63,
+            7,
+            0,
+            0,
+            930,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            4,
+            1,
+            0,
+            0,
+            988,
+            6,
+            0,
+            1
+          ]
+        ]
+      },
+      "execution_device": "mps",
+      "model_name": "custom_cnn",
+      "parent_checkpoint": "results/experiments/custom_cnn_progressive_20261019T120338521794Z/artifacts/stage_0_baseline_best_state.pth",
+      "compression": {
+        "method": "structured_channel_pruning",
+        "importance": "L1 norm of second-convolution output filters per stage",
+        "retention_target": 0.75,
+        "parent_channels": [
+          32,
+          64,
+          128
+        ],
+        "selected_channels": [
+          24,
+          48,
+          96
+        ],
+        "target_original_retention": 0.75
+      },
+      "checkpoint": "results/experiments/custom_cnn_progressive_20261019T120338521794Z/artifacts/stage_1_pruned_immediate.pth",
+      "fine_tuned": false,
+      "artifact_execution_verified": true
+    },
+    {
+      "stage": "stage_1_fine_tuned",
+      "parameters": {
+        "total_params": 162994,
+        "trainable_params": 162994
+      },
+      "size": {
+        "size_mb": 0.6422319412231445,
+        "size_bytes": 673429
+      },
+      "complexity": {
+        "macs": 498624,
+        "flops": 997248,
+        "status": "estimated_from_conv_linear_hooks",
+        "note": "MACs count multiply-accumulate operations; FLOPs are reported as 2 per MAC."
+      },
+      "performance": {
+        "mean_latency_s": 0.0017286275400000206,
+        "median_latency_s": 0.0015855625000000817,
+        "std_latency_s": 0.000394320494069043,
+        "p95_latency_s": 0.0025236146000000904,
+        "throughput_fps": 578.4936181220323,
+        "throughput_batch_size": 1,
+        "throughput_calculation": "batch_size / mean_batch_latency_s",
+        "input_shape": [
+          1,
+          3,
+          32,
+          32
+        ],
+        "iterations": 100
+      },
+      "memory": {
+        "peak_memory_mb": 211.71875,
+        "memory_delta_mb": 0.0,
+        "method": "process_rss_before_after_forward",
+        "note": "RSS is a process-level estimate, not allocator-level peak activation memory."
+      },
+      "metrics": {
+        "accuracy": 0.8263,
+        "macro_precision": 0.8293739279092203,
+        "macro_recall": 0.8263,
+        "macro_f1": 0.8252427801569734,
+        "per_class": {
+          "0": {
+            "precision": 0.8510204081632653,
+            "recall": 0.834,
+            "f1": 0.8424242424242424,
+            "support": 1000
+          },
+          "1": {
+            "precision": 0.963923337091319,
+            "recall": 0.855,
+            "f1": 0.9062003179650239,
+            "support": 1000
+          },
+          "2": {
+            "precision": 0.7651209677419355,
+            "recall": 0.759,
+            "f1": 0.7620481927710844,
+            "support": 1000
+          },
+          "3": {
+            "precision": 0.783289817232376,
+            "recall": 0.6,
+            "f1": 0.6795016987542469,
+            "support": 1000
+          },
+          "4": {
+            "precision": 0.8176470588235294,
+            "recall": 0.834,
+            "f1": 0.8257425742574257,
+            "support": 1000
+          },
+          "5": {
+            "precision": 0.7176991150442478,
+            "recall": 0.811,
+            "f1": 0.7615023474178404,
+            "support": 1000
+          },
+          "6": {
+            "precision": 0.7910189982728842,
+            "recall": 0.916,
+            "f1": 0.8489341983317887,
+            "support": 1000
+          },
+          "7": {
+            "precision": 0.8129032258064516,
+            "recall": 0.882,
+            "f1": 0.8460431654676259,
+            "support": 1000
+          },
+          "8": {
+            "precision": 0.8692748091603053,
+            "recall": 0.911,
+            "f1": 0.8896484375,
+            "support": 1000
+          },
+          "9": {
+            "precision": 0.9218415417558886,
+            "recall": 0.861,
+            "f1": 0.890382626680455,
+            "support": 1000
+          }
+        },
+        "confusion_matrix": [
+          [
+            834,
+            2,
+            46,
+            6,
+            14,
+            2,
+            18,
+            20,
+            45,
+            13
+          ],
+          [
+            19,
+            855,
+            7,
+            4,
+            4,
+            2,
+            19,
+            16,
+            24,
+            50
+          ],
+          [
+            32,
+            0,
+            759,
+            25,
+            44,
+            49,
+            58,
+            28,
+            4,
+            1
+          ],
+          [
+            10,
+            0,
+            59,
+            600,
+            41,
+            169,
+            77,
+            29,
+            12,
+            3
+          ],
+          [
+            7,
+            0,
+            32,
+            19,
+            834,
+            30,
+            28,
+            48,
+            2,
+            0
+          ],
+          [
+            0,
+            2,
+            34,
+            72,
+            30,
+            811,
+            19,
+            29,
+            3,
+            0
+          ],
+          [
+            1,
+            0,
+            16,
+            20,
+            17,
+            16,
+            916,
+            9,
+            4,
+            1
+          ],
+          [
+            8,
+            0,
+            19,
+            13,
+            26,
+            42,
+            9,
+            882,
+            1,
+            0
+          ],
+          [
+            47,
+            4,
+            8,
+            2,
+            4,
+            4,
+            9,
+            6,
+            911,
+            5
+          ],
+          [
+            22,
+            24,
+            12,
+            5,
+            6,
+            5,
+            5,
+            18,
+            42,
+            861
+          ]
+        ]
+      },
+      "execution_device": "mps",
+      "model_name": "custom_cnn",
+      "parent_checkpoint": "results/experiments/custom_cnn_progressive_20261019T120338521794Z/artifacts/stage_1_pruned_immediate.pth",
+      "compression": {
+        "method": "structured_channel_pruning",
+        "importance": "L1 norm of second-convolution output filters per stage",
+        "retention_target": 0.75,
+        "parent_channels": [
+          32,
+          64,
+          128
+        ],
+        "selected_channels": [
+          24,
+          48,
+          96
+        ],
+        "target_original_retention": 0.75
+      },
+      "checkpoint": "results/experiments/custom_cnn_progressive_20261019T120338521794Z/artifacts/stage_1_fine_tuned.pth",
+      "fine_tuned": true,
+      "best_validation_accuracy_percent": 83.7,
+      "best_validation_epoch": 2,
+      "training_duration_seconds": 109.77842998504639,
+      "artifact_execution_verified": true
+    },
+    {
+      "stage": "stage_2_pruned_immediate",
+      "parameters": {
+        "total_params": 72954,
+        "trainable_params": 72954
+      },
+      "size": {
+        "size_mb": 0.2984895706176758,
+        "size_bytes": 312989
+      },
+      "complexity": {
+        "macs": 341632,
+        "flops": 683264,
+        "status": "estimated_from_conv_linear_hooks",
+        "note": "MACs count multiply-accumulate operations; FLOPs are reported as 2 per MAC."
+      },
+      "performance": {
+        "mean_latency_s": 0.0015492954600000131,
+        "median_latency_s": 0.0013745414999999372,
+        "std_latency_s": 0.00042653027819622164,
+        "p95_latency_s": 0.002583296150000058,
+        "throughput_fps": 645.454676540517,
+        "throughput_batch_size": 1,
+        "throughput_calculation": "batch_size / mean_batch_latency_s",
+        "input_shape": [
+          1,
+          3,
+          32,
+          32
+        ],
+        "iterations": 100
+      },
+      "memory": {
+        "peak_memory_mb": 224.75,
+        "memory_delta_mb": 0.0,
+        "method": "process_rss_before_after_forward",
+        "note": "RSS is a process-level estimate, not allocator-level peak activation memory."
+      },
+      "metrics": {
+        "accuracy": 0.1945,
+        "macro_precision": 0.3606542203735482,
+        "macro_recall": 0.1945,
+        "macro_f1": 0.12986688382545247,
+        "per_class": {
+          "0": {
+            "precision": 0.22527472527472528,
+            "recall": 0.328,
+            "f1": 0.2671009771986971,
+            "support": 1000
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1000
+          },
+          "2": {
+            "precision": 0.6666666666666666,
+            "recall": 0.028,
+            "f1": 0.053742802303262956,
+            "support": 1000
+          },
+          "3": {
+            "precision": 0.1288868859846778,
+            "recall": 0.286,
+            "f1": 0.17769493631562597,
+            "support": 1000
+          },
+          "4": {
+            "precision": 0.75,
+            "recall": 0.006,
+            "f1": 0.011904761904761904,
+            "support": 1000
+          },
+          "5": {
+            "precision": 0.2344632768361582,
+            "recall": 0.332,
+            "f1": 0.27483443708609273,
+            "support": 1000
+          },
+          "6": {
+            "precision": 0.18154180238870793,
+            "recall": 0.836,
+            "f1": 0.2983050847457627,
+            "support": 1000
+          },
+          "7": {
+            "precision": 0.9473684210526315,
+            "recall": 0.018,
+            "f1": 0.03532875368007851,
+            "support": 1000
+          },
+          "8": {
+            "precision": 0.4723404255319149,
+            "recall": 0.111,
+            "f1": 0.1797570850202429,
+            "support": 1000
+          },
+          "9": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1000
+          }
+        },
+        "confusion_matrix": [
+          [
+            328,
+            0,
+            2,
+            441,
+            1,
+            54,
+            153,
+            0,
+            21,
+            0
+          ],
+          [
+            181,
+            0,
+            0,
+            91,
+            0,
+            244,
+            432,
+            0,
+            52,
+            0
+          ],
+          [
+            159,
+            0,
+            28,
+            294,
+            0,
+            88,
+            422,
+            0,
+            9,
+            0
+          ],
+          [
+            99,
+            0,
+            1,
+            286,
+            0,
+            143,
+            467,
+            0,
+            4,
+            0
+          ],
+          [
+            101,
+            0,
+            0,
+            116,
+            6,
+            37,
+            738,
+            0,
+            2,
+            0
+          ],
+          [
+            81,
+            0,
+            5,
+            239,
+            0,
+            332,
+            343,
+            0,
+            0,
+            0
+          ],
+          [
+            56,
+            0,
+            1,
+            44,
+            0,
+            38,
+            836,
+            0,
+            25,
+            0
+          ],
+          [
+            239,
+            0,
+            4,
+            103,
+            1,
+            191,
+            443,
+            18,
+            1,
+            0
+          ],
+          [
+            103,
+            0,
+            0,
+            481,
+            0,
+            51,
+            254,
+            0,
+            111,
+            0
+          ],
+          [
+            109,
+            0,
+            1,
+            124,
+            0,
+            238,
+            517,
+            1,
+            10,
+            0
+          ]
+        ]
+      },
+      "execution_device": "mps",
+      "model_name": "custom_cnn",
+      "parent_checkpoint": "results/experiments/custom_cnn_progressive_20261019T120338521794Z/artifacts/stage_1_fine_tuned.pth",
+      "compression": {
+        "method": "structured_channel_pruning",
+        "importance": "L1 norm of second-convolution output filters per stage",
+        "retention_target": 0.6666666666666666,
+        "parent_channels": [
+          24,
+          48,
+          96
+        ],
+        "selected_channels": [
+          16,
+          32,
+          64
+        ],
+        "target_original_retention": 0.5
+      },
+      "checkpoint": "results/experiments/custom_cnn_progressive_20261019T120338521794Z/artifacts/stage_2_pruned_immediate.pth",
+      "fine_tuned": false,
+      "artifact_execution_verified": true
+    },
+    {
+      "stage": "stage_2_fine_tuned",
+      "parameters": {
+        "total_params": 72954,
+        "trainable_params": 72954
+      },
+      "size": {
+        "size_mb": 0.29817676544189453,
+        "size_bytes": 312661
+      },
+      "complexity": {
+        "macs": 341632,
+        "flops": 683264,
+        "status": "estimated_from_conv_linear_hooks",
+        "note": "MACs count multiply-accumulate operations; FLOPs are reported as 2 per MAC."
+      },
+      "performance": {
+        "mean_latency_s": 0.00158824500999998,
+        "median_latency_s": 0.0014240414999999729,
+        "std_latency_s": 0.0003919204333708558,
+        "p95_latency_s": 0.0024642920000000675,
+        "throughput_fps": 629.6257779522396,
+        "throughput_batch_size": 1,
+        "throughput_calculation": "batch_size / mean_batch_latency_s",
+        "input_shape": [
+          1,
+          3,
+          32,
+          32
+        ],
+        "iterations": 100
+      },
+      "memory": {
+        "peak_memory_mb": 224.8125,
+        "memory_delta_mb": 0.0,
+        "method": "process_rss_before_after_forward",
+        "note": "RSS is a process-level estimate, not allocator-level peak activation memory."
+      },
+      "metrics": {
+        "accuracy": 0.793,
+        "macro_precision": 0.7998181593617032,
+        "macro_recall": 0.793,
+        "macro_f1": 0.7933835831930475,
+        "per_class": {
+          "0": {
+            "precision": 0.8138297872340425,
+            "recall": 0.765,
+            "f1": 0.788659793814433,
+            "support": 1000
+          },
+          "1": {
+            "precision": 0.9448732083792724,
+            "recall": 0.857,
+            "f1": 0.8987939171473519,
+            "support": 1000
+          },
+          "2": {
+            "precision": 0.7258726899383984,
+            "recall": 0.707,
+            "f1": 0.7163120567375887,
+            "support": 1000
+          },
+          "3": {
+            "precision": 0.6355394378966455,
+            "recall": 0.701,
+            "f1": 0.6666666666666666,
+            "support": 1000
+          },
+          "4": {
+            "precision": 0.8032085561497326,
+            "recall": 0.751,
+            "f1": 0.7762273901808786,
+            "support": 1000
+          },
+          "5": {
+            "precision": 0.7731376975169301,
+            "recall": 0.685,
+            "f1": 0.7264050901378579,
+            "support": 1000
+          },
+          "6": {
+            "precision": 0.8238188976377953,
+            "recall": 0.837,
+            "f1": 0.8303571428571429,
+            "support": 1000
+          },
+          "7": {
+            "precision": 0.9010356731875719,
+            "recall": 0.783,
+            "f1": 0.8378812199036918,
+            "support": 1000
+          },
+          "8": {
+            "precision": 0.8667315175097277,
+            "recall": 0.891,
+            "f1": 0.878698224852071,
+            "support": 1000
+          },
+          "9": {
+            "precision": 0.710134128166915,
+            "recall": 0.953,
+            "f1": 0.8138343296327925,
+            "support": 1000
+          }
+        },
+        "confusion_matrix": [
+          [
+            765,
+            9,
+            31,
+            27,
+            10,
+            2,
+            6,
+            3,
+            73,
+            74
+          ],
+          [
+            11,
+            857,
+            1,
+            1,
+            1,
+            0,
+            7,
+            2,
+            10,
+            110
+          ],
+          [
+            65,
+            3,
+            707,
+            44,
+            47,
+            45,
+            46,
+            9,
+            12,
+            22
+          ],
+          [
+            10,
+            1,
+            53,
+            701,
+            47,
+            79,
+            53,
+            12,
+            11,
+            33
+          ],
+          [
+            15,
+            2,
+            61,
+            49,
+            751,
+            25,
+            42,
+            31,
+            6,
+            18
+          ],
+          [
+            5,
+            0,
+            51,
+            163,
+            29,
+            685,
+            14,
+            25,
+            7,
+            21
+          ],
+          [
+            7,
+            1,
+            35,
+            64,
+            22,
+            13,
+            837,
+            2,
+            8,
+            11
+          ],
+          [
+            15,
+            1,
+            26,
+            41,
+            27,
+            37,
+            6,
+            783,
+            3,
+            61
+          ],
+          [
+            38,
+            7,
+            7,
+            11,
+            1,
+            0,
+            4,
+            2,
+            891,
+            39
+          ],
+          [
+            9,
+            26,
+            2,
+            2,
+            0,
+            0,
+            1,
+            0,
+            7,
+            953
+          ]
+        ]
+      },
+      "execution_device": "mps",
+      "model_name": "custom_cnn",
+      "parent_checkpoint": "results/experiments/custom_cnn_progressive_20261019T120338521794Z/artifacts/stage_2_pruned_immediate.pth",
+      "compression": {
+        "method": "structured_channel_pruning",
+        "importance": "L1 norm of second-convolution output filters per stage",
+        "retention_target": 0.6666666666666666,
+        "parent_channels": [
+          24,
+          48,
+          96
+        ],
+        "selected_channels": [
+          16,
+          32,
+          64
+        ],
+        "target_original_retention": 0.5
+      },
+      "checkpoint": "results/experiments/custom_cnn_progressive_20261019T120338521794Z/artifacts/stage_2_fine_tuned.pth",
+      "fine_tuned": true,
+      "best_validation_accuracy_percent": 80.74,
+      "best_validation_epoch": 3,
+      "training_duration_seconds": 103.62325668334961,
+      "artifact_execution_verified": true
+    },
+    {
+      "stage": "stage_3_pruned_immediate",
+      "parameters": {
+        "total_params": 18626,
+        "trainable_params": 18626
+      },
+      "size": {
+        "size_mb": 0.09011554718017578,
+        "size_bytes": 94493
+      },
+      "complexity": {
+        "macs": 184640,
+        "flops": 369280,
+        "status": "estimated_from_conv_linear_hooks",
+        "note": "MACs count multiply-accumulate operations; FLOPs are reported as 2 per MAC."
+      },
+      "performance": {
+        "mean_latency_s": 0.0015012500099999705,
+        "median_latency_s": 0.0013027079999998747,
+        "std_latency_s": 0.0004716087648372199,
+        "p95_latency_s": 0.0024361479000000845,
+        "throughput_fps": 666.1115692515597,
+        "throughput_batch_size": 1,
+        "throughput_calculation": "batch_size / mean_batch_latency_s",
+        "input_shape": [
+          1,
+          3,
+          32,
+          32
+        ],
+        "iterations": 100
+      },
+      "memory": {
+        "peak_memory_mb": 238.53125,
+        "memory_delta_mb": 0.0,
+        "method": "process_rss_before_after_forward",
+        "note": "RSS is a process-level estimate, not allocator-level peak activation memory."
+      },
+      "metrics": {
+        "accuracy": 0.1,
+        "macro_precision": 0.01,
+        "macro_recall": 0.1,
+        "macro_f1": 0.01818181818181818,
+        "per_class": {
+          "0": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1000
+          },
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1000
+          },
+          "2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1000
+          },
+          "3": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1000
+          },
+          "4": {
+            "precision": 0.1,
+            "recall": 1.0,
+            "f1": 0.18181818181818182,
+            "support": 1000
+          },
+          "5": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1000
+          },
+          "6": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1000
+          },
+          "7": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1000
+          },
+          "8": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1000
+          },
+          "9": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1000
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "execution_device": "mps",
+      "model_name": "custom_cnn",
+      "parent_checkpoint": "results/experiments/custom_cnn_progressive_20261019T120338521794Z/artifacts/stage_2_fine_tuned.pth",
+      "compression": {
+        "method": "structured_channel_pruning",
+        "importance": "L1 norm of second-convolution output filters per stage",
+        "retention_target": 0.5,
+        "parent_channels": [
+          16,
+          32,
+          64
+        ],
+        "selected_channels": [
+          8,
+          16,
+          32
+        ],
+        "target_original_retention": 0.25
+      },
+      "checkpoint": "results/experiments/custom_cnn_progressive_20261019T120338521794Z/artifacts/stage_3_pruned_immediate.pth",
+      "fine_tuned": false,
+      "artifact_execution_verified": true
+    },
+    {
+      "stage": "stage_3_fine_tuned",
+      "parameters": {
+        "total_params": 18626,
+        "trainable_params": 18626
+      },
+      "size": {
+        "size_mb": 0.08980274200439453,
+        "size_bytes": 94165
+      },
+      "complexity": {
+        "macs": 184640,
+        "flops": 369280,
+        "status": "estimated_from_conv_linear_hooks",
+        "note": "MACs count multiply-accumulate operations; FLOPs are reported as 2 per MAC."
+      },
+      "performance": {
+        "mean_latency_s": 0.0014737575200000118,
+        "median_latency_s": 0.0012727915000001477,
+        "std_latency_s": 0.00042974658899199347,
+        "p95_latency_s": 0.0026182312500001577,
+        "throughput_fps": 678.5376742301488,
+        "throughput_batch_size": 1,
+        "throughput_calculation": "batch_size / mean_batch_latency_s",
+        "input_shape": [
+          1,
+          3,
+          32,
+          32
+        ],
+        "iterations": 100
+      },
+      "memory": {
+        "peak_memory_mb": 238.140625,
+        "memory_delta_mb": 0.0,
+        "method": "process_rss_before_after_forward",
+        "note": "RSS is a process-level estimate, not allocator-level peak activation memory."
+      },
+      "metrics": {
+        "accuracy": 0.6919,
+        "macro_precision": 0.7263552093268547,
+        "macro_recall": 0.6919,
+        "macro_f1": 0.6969519007995709,
+        "per_class": {
+          "0": {
+            "precision": 0.786046511627907,
+            "recall": 0.676,
+            "f1": 0.7268817204301076,
+            "support": 1000
+          },
+          "1": {
+            "precision": 0.9516339869281045,
+            "recall": 0.728,
+            "f1": 0.8249291784702549,
+            "support": 1000
+          },
+          "2": {
+            "precision": 0.6419612314709237,
+            "recall": 0.563,
+            "f1": 0.5998934469898775,
+            "support": 1000
+          },
+          "3": {
+            "precision": 0.4274193548387097,
+            "recall": 0.689,
+            "f1": 0.5275650842266463,
+            "support": 1000
+          },
+          "4": {
+            "precision": 0.6888888888888889,
+            "recall": 0.682,
+            "f1": 0.685427135678392,
+            "support": 1000
+          },
+          "5": {
+            "precision": 0.7061170212765957,
+            "recall": 0.531,
+            "f1": 0.6061643835616438,
+            "support": 1000
+          },
+          "6": {
+            "precision": 0.8423357664233576,
+            "recall": 0.577,
+            "f1": 0.68486646884273,
+            "support": 1000
+          },
+          "7": {
+            "precision": 0.5841184387617766,
+            "recall": 0.868,
+            "f1": 0.6983105390185036,
+            "support": 1000
+          },
+          "8": {
+            "precision": 0.7786960514233241,
+            "recall": 0.848,
+            "f1": 0.8118717089516515,
+            "support": 1000
+          },
+          "9": {
+            "precision": 0.8563348416289592,
+            "recall": 0.757,
+            "f1": 0.8036093418259024,
+            "support": 1000
+          }
+        },
+        "confusion_matrix": [
+          [
+            676,
+            7,
+            69,
+            66,
+            13,
+            3,
+            7,
+            47,
+            104,
+            8
+          ],
+          [
+            39,
+            728,
+            10,
+            15,
+            7,
+            7,
+            10,
+            50,
+            41,
+            93
+          ],
+          [
+            35,
+            0,
+            563,
+            105,
+            102,
+            45,
+            33,
+            96,
+            19,
+            2
+          ],
+          [
+            11,
+            0,
+            59,
+            689,
+            39,
+            108,
+            21,
+            60,
+            6,
+            7
+          ],
+          [
+            9,
+            0,
+            44,
+            107,
+            682,
+            18,
+            20,
+            110,
+            10,
+            0
+          ],
+          [
+            2,
+            0,
+            34,
+            267,
+            32,
+            531,
+            3,
+            130,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            53,
+            242,
+            82,
+            10,
+            577,
+            31,
+            3,
+            0
+          ],
+          [
+            6,
+            0,
+            21,
+            45,
+            26,
+            26,
+            1,
+            868,
+            2,
+            5
+          ],
+          [
+            46,
+            9,
+            19,
+            30,
+            3,
+            2,
+            10,
+            21,
+            848,
+            12
+          ],
+          [
+            34,
+            21,
+            5,
+            46,
+            4,
+            2,
+            3,
+            73,
+            55,
+            757
+          ]
+        ]
+      },
+      "execution_device": "mps",
+      "model_name": "custom_cnn",
+      "parent_checkpoint": "results/experiments/custom_cnn_progressive_20261019T120338521794Z/artifacts/stage_3_pruned_immediate.pth",
+      "compression": {
+        "method": "structured_channel_pruning",
+        "importance": "L1 norm of second-convolution output filters per stage",
+        "retention_target": 0.5,
+        "parent_channels": [
+          16,
+          32,
+          64
+        ],
+        "selected_channels": [
+          8,
+          16,
+          32
+        ],
+        "target_original_retention": 0.25
+      },
+      "checkpoint": "results/experiments/custom_cnn_progressive_20261019T120338521794Z/artifacts/stage_3_fine_tuned.pth",
+      "fine_tuned": true,
+      "best_validation_accuracy_percent": 69.34,
+      "best_validation_epoch": 3,
+      "training_duration_seconds": 86.57217073440552,
+      "artifact_execution_verified": true
+    }
+  ],
+  "training_histories": {
+    "stage_0_baseline": [
+      {
+        "epoch": 1,
+        "train_loss": 1.366090325694614,
+        "train_accuracy_percent": 50.022222222222226,
+        "validation_loss": 1.375553992843628,
+        "validation_accuracy_percent": 53.08
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.9641979963090684,
+        "train_accuracy_percent": 66.02666666666667,
+        "validation_loss": 0.8785623557090759,
+        "validation_accuracy_percent": 69.14
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.8102617550081677,
+        "train_accuracy_percent": 71.58666666666667,
+        "validation_loss": 0.8751750571250916,
+        "validation_accuracy_percent": 69.7
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.709830190785726,
+        "train_accuracy_percent": 75.30222222222223,
+        "validation_loss": 0.8665289199829102,
+        "validation_accuracy_percent": 71.42
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.6457094356324937,
+        "train_accuracy_percent": 77.64888888888889,
+        "validation_loss": 0.7628378941535949,
+        "validation_accuracy_percent": 74.1
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.598250034989251,
+        "train_accuracy_percent": 79.32888888888888,
+        "validation_loss": 0.620519799041748,
+        "validation_accuracy_percent": 79.7
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.5631063233693441,
+        "train_accuracy_percent": 80.61333333333333,
+        "validation_loss": 0.6155789646148682,
+        "validation_accuracy_percent": 79.36
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.533546971209844,
+        "train_accuracy_percent": 81.50666666666666,
+        "validation_loss": 0.5988672437667847,
+        "validation_accuracy_percent": 79.78
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.5091218436135186,
+        "train_accuracy_percent": 82.56,
+        "validation_loss": 0.5619747450351715,
+        "validation_accuracy_percent": 81.28
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.488277524195777,
+        "train_accuracy_percent": 83.14666666666666,
+        "validation_loss": 0.5133375310897828,
+        "validation_accuracy_percent": 82.64
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.46500260808732774,
+        "train_accuracy_percent": 83.94444444444444,
+        "validation_loss": 0.5001419945716858,
+        "validation_accuracy_percent": 82.78
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.4529774670494927,
+        "train_accuracy_percent": 84.53777777777778,
+        "validation_loss": 0.4967933843612671,
+        "validation_accuracy_percent": 83.44
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.43420268172687954,
+        "train_accuracy_percent": 84.78666666666666,
+        "validation_loss": 0.5761448905944824,
+        "validation_accuracy_percent": 80.82
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.4175596118715074,
+        "train_accuracy_percent": 85.67555555555556,
+        "validation_loss": 0.4632005535125732,
+        "validation_accuracy_percent": 84.48
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.413307137298584,
+        "train_accuracy_percent": 85.72444444444444,
+        "validation_loss": 0.47332149753570557,
+        "validation_accuracy_percent": 84.88
+      },
+      {
+        "epoch": 16,
+        "train_loss": 0.4001449438518948,
+        "train_accuracy_percent": 86.17333333333333,
+        "validation_loss": 0.4856885884284973,
+        "validation_accuracy_percent": 84.04
+      },
+      {
+        "epoch": 17,
+        "train_loss": 0.38910153352949356,
+        "train_accuracy_percent": 86.85777777777778,
+        "validation_loss": 0.46515491600036624,
+        "validation_accuracy_percent": 84.6
+      },
+      {
+        "epoch": 18,
+        "train_loss": 0.37649331249660917,
+        "train_accuracy_percent": 86.81555555555556,
+        "validation_loss": 0.49689679765701295,
+        "validation_accuracy_percent": 83.18
+      },
+      {
+        "epoch": 19,
+        "train_loss": 0.37229537525177003,
+        "train_accuracy_percent": 87.20666666666666,
+        "validation_loss": 0.5553612314701081,
+        "validation_accuracy_percent": 82.12
+      },
+      {
+        "epoch": 20,
+        "train_loss": 0.3698887721485562,
+        "train_accuracy_percent": 87.14888888888889,
+        "validation_loss": 0.45818875398635867,
+        "validation_accuracy_percent": 85.1
+      },
+      {
+        "epoch": 21,
+        "train_loss": 0.3613086764229668,
+        "train_accuracy_percent": 87.56,
+        "validation_loss": 0.5178355027198791,
+        "validation_accuracy_percent": 83.54
+      },
+      {
+        "epoch": 22,
+        "train_loss": 0.3548507153617011,
+        "train_accuracy_percent": 87.71777777777778,
+        "validation_loss": 0.5106733699321747,
+        "validation_accuracy_percent": 82.68
+      },
+      {
+        "epoch": 23,
+        "train_loss": 0.3479296759287516,
+        "train_accuracy_percent": 88.08888888888889,
+        "validation_loss": 0.43148781504631045,
+        "validation_accuracy_percent": 85.04
+      },
+      {
+        "epoch": 24,
+        "train_loss": 0.34491654132207233,
+        "train_accuracy_percent": 88.0911111111111,
+        "validation_loss": 0.49457655696868896,
+        "validation_accuracy_percent": 83.9
+      },
+      {
+        "epoch": 25,
+        "train_loss": 0.34012308050791423,
+        "train_accuracy_percent": 88.38222222222223,
+        "validation_loss": 0.45408981046676633,
+        "validation_accuracy_percent": 85.3
+      },
+      {
+        "epoch": 26,
+        "train_loss": 0.33543218546973336,
+        "train_accuracy_percent": 88.62666666666667,
+        "validation_loss": 0.4517956284046173,
+        "validation_accuracy_percent": 85.14
+      },
+      {
+        "epoch": 27,
+        "train_loss": 0.33173205223083496,
+        "train_accuracy_percent": 88.52444444444444,
+        "validation_loss": 0.493070677947998,
+        "validation_accuracy_percent": 83.76
+      },
+      {
+        "epoch": 28,
+        "train_loss": 0.3269416085296207,
+        "train_accuracy_percent": 88.70666666666666,
+        "validation_loss": 0.4766471294403076,
+        "validation_accuracy_percent": 84.2
+      },
+      {
+        "epoch": 29,
+        "train_loss": 0.3246705428176456,
+        "train_accuracy_percent": 88.85111111111111,
+        "validation_loss": 0.4881626403808594,
+        "validation_accuracy_percent": 83.94
+      },
+      {
+        "epoch": 30,
+        "train_loss": 0.3159249960634444,
+        "train_accuracy_percent": 89.14444444444445,
+        "validation_loss": 0.4017027284622192,
+        "validation_accuracy_percent": 86.52
+      }
+    ],
+    "stage_1_fine_tuned": [
+      {
+        "epoch": 1,
+        "train_loss": 0.5209235479990642,
+        "train_accuracy_percent": 82.12222222222222,
+        "validation_loss": 0.5780045890808105,
+        "validation_accuracy_percent": 80.34
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.45905732928382026,
+        "train_accuracy_percent": 84.39777777777778,
+        "validation_loss": 0.4771852062225342,
+        "validation_accuracy_percent": 83.7
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.44038123660617406,
+        "train_accuracy_percent": 84.86666666666666,
+        "validation_loss": 0.5169667615890503,
+        "validation_accuracy_percent": 82.64
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.4230730189429389,
+        "train_accuracy_percent": 85.59333333333333,
+        "validation_loss": 0.547824713897705,
+        "validation_accuracy_percent": 81.72
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.4075270961549547,
+        "train_accuracy_percent": 86.01777777777778,
+        "validation_loss": 0.5056228085517883,
+        "validation_accuracy_percent": 83.54
+      }
+    ],
+    "stage_2_fine_tuned": [
+      {
+        "epoch": 1,
+        "train_loss": 0.7258175399462382,
+        "train_accuracy_percent": 75.24666666666667,
+        "validation_loss": 1.1480523765563966,
+        "validation_accuracy_percent": 63.26
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.6142629723442925,
+        "train_accuracy_percent": 79.03111111111112,
+        "validation_loss": 0.6301395641326905,
+        "validation_accuracy_percent": 78.2
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.5844443029191759,
+        "train_accuracy_percent": 79.96444444444444,
+        "validation_loss": 0.5915497621536255,
+        "validation_accuracy_percent": 80.74
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.5616399736404419,
+        "train_accuracy_percent": 80.68,
+        "validation_loss": 0.7468566205978393,
+        "validation_accuracy_percent": 75.08
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.5450025605095757,
+        "train_accuracy_percent": 81.4088888888889,
+        "validation_loss": 0.6159927303314209,
+        "validation_accuracy_percent": 79.6
+      }
+    ],
+    "stage_3_fine_tuned": [
+      {
+        "epoch": 1,
+        "train_loss": 1.0995155669424268,
+        "train_accuracy_percent": 61.18888888888889,
+        "validation_loss": 1.009311410331726,
+        "validation_accuracy_percent": 65.46
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.9042992720074123,
+        "train_accuracy_percent": 68.54666666666667,
+        "validation_loss": 1.0898783911705017,
+        "validation_accuracy_percent": 63.62
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.849408389875624,
+        "train_accuracy_percent": 70.28666666666666,
+        "validation_loss": 0.8982805791854859,
+        "validation_accuracy_percent": 69.34
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.8163978501849705,
+        "train_accuracy_percent": 71.59555555555555,
+        "validation_loss": 0.9164375756263733,
+        "validation_accuracy_percent": 68.42
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.7898152155558268,
+        "train_accuracy_percent": 72.47777777777777,
+        "validation_loss": 0.9419814001083374,
+        "validation_accuracy_percent": 68.64
+      }
+    ]
+  }
+}

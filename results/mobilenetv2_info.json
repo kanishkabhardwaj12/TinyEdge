@@ -1,0 +1,7 @@
+{
+    "model_name": "mobilenetv2",
+    "train_time": 32.62578535079956,
+    "best_val_acc": 17.6,
+    "model_size_mb": 8.79908275604248,
+    "params": 2236682
+}

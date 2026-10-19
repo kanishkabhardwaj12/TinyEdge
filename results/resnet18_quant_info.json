@@ -1,0 +1,6 @@
+{
+    "model_name": "resnet18",
+    "original_size_mb": 42.71235179901123,
+    "quantized_size_mb": 42.69880199432373,
+    "reduction": 0.03172338706906247
+}

@@ -1,0 +1,68 @@
+{
+    "resnet18": {
+        "parameters": {
+            "total_params": 11173962,
+            "trainable_params": 11173962
+        },
+        "size": {
+            "size_mb": 42.71308422088623,
+            "size_bytes": 44787915
+        },
+        "performance": {
+            "mean_latency_s": 0.006018737940066785,
+            "median_latency_s": 0.005799895498967089,
+            "std_latency_s": 0.0004128895768993786,
+            "throughput_fps": 166.14778878192922,
+            "input_shape": [
+                1,
+                3,
+                32,
+                32
+            ],
+            "iterations": 100
+        },
+        "memory": {
+            "peak_memory_mb": 460.4140625,
+            "memory_delta_mb": 0.01171875
+        },
+        "complexity": {
+            "flops": "Use thop/fvcore for precise count",
+            "status": "approximate"
+        },
+        "device": "cpu",
+        "timestamp": 1792402945.406185
+    },
+    "mobilenetv2": {
+        "parameters": {
+            "total_params": 2236682,
+            "trainable_params": 2236682
+        },
+        "size": {
+            "size_mb": 8.79908275604248,
+            "size_bytes": 9226507
+        },
+        "performance": {
+            "mean_latency_s": 0.0030902800601143097,
+            "median_latency_s": 0.0028079164994778694,
+            "std_latency_s": 0.0010683388389352163,
+            "throughput_fps": 323.5952666254494,
+            "input_shape": [
+                1,
+                3,
+                32,
+                32
+            ],
+            "iterations": 100
+        },
+        "memory": {
+            "peak_memory_mb": 456.4140625,
+            "memory_delta_mb": 0.0
+        },
+        "complexity": {
+            "flops": "Use thop/fvcore for precise count",
+            "status": "approximate"
+        },
+        "device": "cpu",
+        "timestamp": 1792402945.8234522
+    }
+}
